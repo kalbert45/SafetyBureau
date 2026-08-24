@@ -1,0 +1,144 @@
+[gd_scene format=3 uid="uid://crc4aqsb6olf8"]
+
+[ext_resource type="Script" uid="uid://d37v5o0nidwb5" path="res://Common/System/UI/BoardUI/board_ui.gd" id="1_1cdrg"]
+[ext_resource type="PackedScene" uid="uid://bmppa7g5eqpn2" path="res://Common/System/UI/BoardUI/board_slot.tscn" id="2_1h71w"]
+[ext_resource type="Script" uid="uid://bicvvm0s4g4l2" path="res://Common/System/UI/BoardUI/BoardUI_input_handler.gd" id="2_7vp5p"]
+[ext_resource type="Script" uid="uid://cse4u1fkycmmy" path="res://Common/System/UI/BoardUI/combat_handler.gd" id="2_bt4s4"]
+[ext_resource type="PackedScene" uid="uid://cma0jgvt1mhp3" path="res://Entities/Units/Heroes/ClassDef/hero.tscn" id="3_0a0o2"]
+[ext_resource type="Script" uid="uid://b1kvhgao5jabx" path="res://Entities/Units/Heroes/ClassDef/HeroData.gd" id="5_vjy1d"]
+[ext_resource type="PackedScene" uid="uid://b4wydxv4jdtwm" path="res://Entities/Units/Enemies/Grunt/grunt.tscn" id="7_iwro4"]
+[ext_resource type="Script" uid="uid://cek0f1huu54rg" path="res://Entities/Units/Enemies/ClassDef/EnemyData.gd" id="8_cm8ut"]
+
+[sub_resource type="Resource" id="Resource_tlsav"]
+script = ExtResource("5_vjy1d")
+metadata/_custom_type_script = "uid://b1kvhgao5jabx"
+
+[sub_resource type="Resource" id="Resource_mxyms"]
+script = ExtResource("5_vjy1d")
+position_index = 1
+metadata/_custom_type_script = "uid://b1kvhgao5jabx"
+
+[sub_resource type="Resource" id="Resource_7e7at"]
+script = ExtResource("8_cm8ut")
+metadata/_custom_type_script = "uid://cek0f1huu54rg"
+
+[node name="BoardUI" type="Control" unique_id=1596163736]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_1cdrg")
+
+[node name="CombatHandler" type="Node" parent="." unique_id=1185543133]
+script = ExtResource("2_bt4s4")
+
+[node name="InputHandler" type="Node" parent="." unique_id=674100741]
+script = ExtResource("2_7vp5p")
+
+[node name="HeroSlotContainer" type="HBoxContainer" parent="." unique_id=243256374]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 58.0
+offset_top = 170.0
+offset_right = 314.0
+offset_bottom = 234.0
+mouse_filter = 2
+theme_override_constants/separation = 4
+
+[node name="BoardSlot0" parent="HeroSlotContainer" unique_id=63022755 instance=ExtResource("2_1h71w")]
+layout_mode = 2
+
+[node name="BoardSlot1" parent="HeroSlotContainer" unique_id=1403958055 instance=ExtResource("2_1h71w")]
+layout_mode = 2
+index = 1
+
+[node name="BoardSlot2" parent="HeroSlotContainer" unique_id=1686811727 instance=ExtResource("2_1h71w")]
+layout_mode = 2
+index = 2
+
+[node name="BoardSlot3" parent="HeroSlotContainer" unique_id=1985954966 instance=ExtResource("2_1h71w")]
+layout_mode = 2
+index = 3
+
+[node name="BoardSlot4" parent="HeroSlotContainer" unique_id=411083156 instance=ExtResource("2_1h71w")]
+layout_mode = 2
+index = 4
+
+[node name="HeroContainer" type="Control" parent="." unique_id=672374466]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="Hero" parent="HeroContainer" unique_id=1767766882 instance=ExtResource("3_0a0o2")]
+layout_mode = 1
+offset_left = 73.0
+offset_top = 164.0
+offset_right = 73.0
+offset_bottom = 164.0
+data = SubResource("Resource_tlsav")
+
+[node name="Hero2" parent="HeroContainer" unique_id=1118418084 instance=ExtResource("3_0a0o2")]
+layout_mode = 1
+offset_left = 125.0
+offset_top = 164.0
+offset_right = 125.0
+offset_bottom = 164.0
+data = SubResource("Resource_mxyms")
+
+[node name="EnemySlotContainer" type="HBoxContainer" parent="." unique_id=1918617286]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 341.0
+offset_top = 170.0
+offset_right = 597.0
+offset_bottom = 234.0
+mouse_filter = 2
+
+[node name="BoardSlot0" parent="EnemySlotContainer" unique_id=1741071053 instance=ExtResource("2_1h71w")]
+layout_mode = 2
+
+[node name="BoardSlot1" parent="EnemySlotContainer" unique_id=1953786996 instance=ExtResource("2_1h71w")]
+layout_mode = 2
+index = 1
+
+[node name="BoardSlot2" parent="EnemySlotContainer" unique_id=754477004 instance=ExtResource("2_1h71w")]
+layout_mode = 2
+index = 2
+
+[node name="BoardSlot3" parent="EnemySlotContainer" unique_id=1269177403 instance=ExtResource("2_1h71w")]
+layout_mode = 2
+index = 3
+
+[node name="BoardSlot4" parent="EnemySlotContainer" unique_id=938783237 instance=ExtResource("2_1h71w")]
+layout_mode = 2
+index = 4
+
+[node name="EnemyContainer" type="Control" parent="." unique_id=1992935770]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="Grunt" parent="EnemyContainer" unique_id=833600198 instance=ExtResource("7_iwro4")]
+layout_mode = 1
+offset_left = 340.0
+offset_top = 163.0
+offset_right = 340.0
+offset_bottom = 163.0
+data = SubResource("Resource_7e7at")
+
+[node name="StartCombatButton" type="Button" parent="." unique_id=1568056007]
+layout_mode = 0
+offset_left = 266.0
+offset_top = 260.0
+offset_right = 375.0
+offset_bottom = 302.0
+text = "Start combat"
+
+[connection signal="pressed" from="StartCombatButton" to="." method="_on_start_combat_button_pressed"]

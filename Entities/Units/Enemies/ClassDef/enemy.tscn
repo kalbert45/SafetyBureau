@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c0fop8ioc7ufn"]
+
+[ext_resource type="PackedScene" uid="uid://bsx07jr5ix1km" path="res://Entities/Units/ClassDef/Unit.tscn" id="1_riv4b"]
+[ext_resource type="Script" uid="uid://5m0m1ajiau0a" path="res://Entities/Units/Enemies/ClassDef/enemy.gd" id="2_ax05m"]
+
+[node name="Enemy" unique_id=1767766882 instance=ExtResource("1_riv4b")]
+script = ExtResource("2_ax05m")

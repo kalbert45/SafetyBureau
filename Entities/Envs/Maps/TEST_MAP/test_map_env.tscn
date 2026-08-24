@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://4xqcqpm5imgq"]
+
+[ext_resource type="PackedScene" uid="uid://bkjvxtfr0tlq" path="res://Entities/Envs/Maps/TEST_MAP/test_map_env.blend" id="1_e75it"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yupk7"]
+albedo_color = Color(0.35906908, 0.35906908, 0.35906908, 1)
+
+[node name="test_map_env" unique_id=814488950 instance=ExtResource("1_e75it")]
+
+[node name="Cube" parent="." index="0" unique_id=1612912298]
+surface_material_override/0 = SubResource("StandardMaterial3D_yupk7")

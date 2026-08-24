@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dj72qrx45i6s3"]
+
+[ext_resource type="Script" uid="uid://cyqlct6gu7ysc" path="res://Entities/Units/ClassDef/CDcomponent.gd" id="1_owcce"]
+[ext_resource type="Script" uid="uid://dpgfi7jt1hreu" path="res://Entities/Units/ClassDef/CooldownTimer.gd" id="2_wqi87"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_owcce"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wqi87"]
+bg_color = Color(0.8810568, 0.4830795, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yt8ro"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kx4li"]
+bg_color = Color(0.3048962, 0.62676257, 0.88899094, 1)
+
+[node name="CDComponent" type="Control" unique_id=613800876]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_owcce")
+
+[node name="AttackCDTimer" type="Timer" parent="." unique_id=971893460]
+script = ExtResource("2_wqi87")
+metadata/_custom_type_script = "uid://dpgfi7jt1hreu"
+
+[node name="AbilityCDTimer" type="Timer" parent="." unique_id=1669084640]
+script = ExtResource("2_wqi87")
+metadata/_custom_type_script = "uid://dpgfi7jt1hreu"
+
+[node name="AttackCDProgress" type="ProgressBar" parent="." unique_id=1486459391]
+visible = false
+layout_mode = 0
+offset_right = 55.0
+offset_bottom = 7.0
+theme_override_styles/background = SubResource("StyleBoxFlat_owcce")
+theme_override_styles/fill = SubResource("StyleBoxFlat_wqi87")
+value = 40.0
+show_percentage = false
+
+[node name="AbilityCDProgress" type="ProgressBar" parent="." unique_id=1931297841]
+visible = false
+layout_mode = 0
+offset_right = 55.0
+offset_bottom = 7.0
+theme_override_styles/background = SubResource("StyleBoxFlat_yt8ro")
+theme_override_styles/fill = SubResource("StyleBoxFlat_kx4li")
+value = 50.0
+show_percentage = false
+
+[connection signal="timeout" from="AttackCDTimer" to="." method="_on_attack_cd_timer_timeout"]
+[connection signal="timeout" from="AbilityCDTimer" to="." method="_on_ability_cd_timer_timeout"]

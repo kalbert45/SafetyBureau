@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cj4o0fk8inb0x"]
+
+[ext_resource type="Script" uid="uid://t7vmwpsnio30" path="res://Common/Rooms/Combat/combat_room.gd" id="1_pu8qm"]
+[ext_resource type="Texture2D" uid="uid://bgqnjd1qcscec" path="res://Entities/Envs/Maps/TEST_MAP/office_background.png" id="2_gwxad"]
+[ext_resource type="PackedScene" uid="uid://crc4aqsb6olf8" path="res://Common/System/UI/BoardUI/board_ui.tscn" id="2_msmif"]
+
+[node name="CombatRoom" type="Control" unique_id=1752784683]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pu8qm")
+
+[node name="Env" type="Control" parent="." unique_id=510645768]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Env" unique_id=1672755518]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+mouse_filter = 2
+texture = ExtResource("2_gwxad")
+
+[node name="BoardUI" parent="." unique_id=1596163736 instance=ExtResource("2_msmif")]
+layout_mode = 1

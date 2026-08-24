@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://brjqc8kh0u3xh"]
+
+[ext_resource type="Script" uid="uid://b3l3oxir6fbri" path="res://Entities/Units/ClassDef/health_component.gd" id="1_m1jvl"]
+[ext_resource type="FontFile" uid="uid://dk2q8sqeish0u" path="res://Assets/Fonts/Nope 8.ttf" id="2_f8t1j"]
+
+[node name="HealthComponent" type="Control" unique_id=1025099558]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m1jvl")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=53282386]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_fonts/normal_font = ExtResource("2_f8t1j")
+text = "100"

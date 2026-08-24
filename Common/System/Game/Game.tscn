@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://brsj0maf7b31d"]
+
+[ext_resource type="Script" uid="uid://dki0myfy6h4uf" path="res://Common/System/Game/game.gd" id="1_cipvr"]
+
+[node name="Game" type="Control" unique_id=1750254476]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cipvr")
+
+[node name="RoomHandler" type="Control" parent="." unique_id=1857723506]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=475624413]

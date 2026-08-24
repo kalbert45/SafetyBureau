@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://0qhdfkvu0y87"]
+
+[ext_resource type="Script" uid="uid://dxgqikqjtn21c" path="res://Autoload/BGM.gd" id="1_hgeje"]
+
+[node name="Bgm" type="Node" unique_id=1889436737]
+script = ExtResource("1_hgeje")
