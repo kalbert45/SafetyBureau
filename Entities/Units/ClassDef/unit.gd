@@ -9,6 +9,8 @@ signal death
 
 var _tween : Tween
 
+var temp_data : UnitData
+
 var max_health := 100 :
 	set(value):
 		max_health = value
@@ -17,20 +19,23 @@ var current_health := 100 :
 	set(value):
 		current_health = clampi(value, 0, max_health)
 		health_component.health = current_health
+		if current_health <= 0:
+			handle_death()
 var shield := 0:
 	set(value):
 		shield = maxi(0, value)
 		health_component.shield = shield
 
 
-@onready var sprite = $Sprite2D
-@onready var animation_player = $AnimationPlayer
+@onready var sprite : Sprite2D = $Sprite2D
+@onready var animation_player : AnimationPlayer = $AnimationPlayer
 @onready var health_component : HealthComponent = $HealthComponent
 @onready var cd_component : CDComponent = $CDComponent
 
 func _ready() -> void:
 	cd_component.use_attack.connect(use_attack)
 	cd_component.use_ability.connect(use_ability)
+	
 
 #----------- LOCALLY DEFINED -----------------
 func start_combat() -> void:
@@ -41,14 +46,31 @@ func stop_combat() -> void:
 
 func use_attack() -> void:
 	pass
-	
+
+func process_attack() -> void:
+	pass
+
 func use_ability() -> void:
 	pass
 
+func process_ability() -> void:
+	pass
+
+func handle_death() -> void:
+	cd_component.stop()
+	animation_player.play("death")
+	emit_signal("death")
+	
+
 func take_damage(dmg : DamageSource) -> int:
-	return 0
+	self.current_health -= dmg.amount
+	return dmg.amount
 
 #----------------------------------------------------
+
+func check_attack_mode() -> void:
+	if temp_data.position_index <= temp_data.attack_range - 1:
+		cd_component.shift_to_attack_mode()
 
 func move_to(p : Vector2, running : bool = false) -> void:
 	if _tween and _tween.is_running():

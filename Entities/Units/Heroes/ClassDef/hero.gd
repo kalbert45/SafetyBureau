@@ -2,6 +2,13 @@ class_name Hero extends Unit
 
 @export var data : HeroData
 
+func _ready() -> void:
+	super()
+	temp_data = data.duplicate()
+	cd_component.unit_temp_data = temp_data
+
+#------------------------
+
 func start_combat() -> void:
 	cd_component.start()
 	
@@ -9,10 +16,19 @@ func stop_combat() -> void:
 	cd_component.stop()
 
 func use_attack() -> void:
-	print("use attack")
+	animation_player.play("attack")
+	
+func process_attack() -> void:
+	var dmg = DamageSource.new()
+	dmg.amount = 10
+	emit_signal("damage_enemy", dmg, 0)
 	
 func use_ability() -> void:
-	print("use_ability")
+	animation_player.play("ability")
+
+func process_ability() -> void:
+	pass
+
 
 #--------------------------
 

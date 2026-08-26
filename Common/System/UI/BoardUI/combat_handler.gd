@@ -5,12 +5,16 @@ var ENEMY_ARR : Array[Enemy] = [] # front of array is frontline
 
 
 func handle_combat() -> void:
+	# flip hero array for combat purposes
+	# also need to adjust position index for the running animation
+	HERO_ARR.reverse()
+	for i in range(HERO_ARR.size()):
+		if not is_instance_valid(HERO_ARR[i]): continue
+		HERO_ARR[i].temp_data.position_index = i
+	
 	# setup arrays
 	HERO_ARR = HERO_ARR.filter(_filter_out_null)
 	ENEMY_ARR = ENEMY_ARR.filter(_filter_out_null)
-	
-	# flip hero array for combat purposes
-	HERO_ARR.reverse()
 	
 	arrange_units()
 	
@@ -25,26 +29,41 @@ func handle_combat() -> void:
 func arrange_units() -> void:
 	for i in range(HERO_ARR.size()):
 		if not is_instance_valid(HERO_ARR[i]) : continue
-		HERO_ARR[i].move_to(%HeroSlotContainer.get_child(Constants.NUM_HERO_SLOTS - i - 1).global_position, true)
-		HERO_ARR[i].data.position_index = i
+		var hero = HERO_ARR[i]
+		hero.move_to(%HeroSlotContainer.get_child(Constants.NUM_HERO_SLOTS - i - 1).global_position, hero.temp_data.position_index != i)
+		hero.temp_data.position_index = i
+		hero.check_attack_mode()
 	for i in range(ENEMY_ARR.size()):
 		if not is_instance_valid(ENEMY_ARR[i]) : continue
-		ENEMY_ARR[i].move_to(%EnemySlotContainer.get_child(i).global_position)
-		ENEMY_ARR[i].data.position_index = i
+		var enemy = ENEMY_ARR[i]
+		enemy.move_to(%EnemySlotContainer.get_child(i).global_position, enemy.temp_data.position_index != i)
+		enemy.temp_data.position_index = i
+		enemy.check_attack_mode()
 
-func check_combat_end() -> bool:
-	return false
+func check_combat_end() -> void:
+	if HERO_ARR.is_empty() or ENEMY_ARR.is_empty():
+		for unit : Unit in get_tree().get_nodes_in_group("Units"):
+			if is_instance_valid(unit):
+				unit.stop_combat()
 
 #-----------------------
 
 func _on_damage_hero(dmg : DamageSource, target_index : int) -> void:
-	pass
+	if HERO_ARR.get(target_index):
+		HERO_ARR.get(target_index).take_damage(dmg)
 	
 func _on_damage_enemy(dmg : DamageSource, target_index : int) -> void:
-	pass
+	if ENEMY_ARR.get(target_index):
+		ENEMY_ARR.get(target_index).take_damage(dmg)
 
 func _on_unit_death(unit : Unit) -> void:
-	pass
+	if unit is Hero:
+		HERO_ARR.erase(unit)
+	else:
+		ENEMY_ARR.erase(unit)
+	
+	check_combat_end()
+	arrange_units()
 
 #-----------------------
 func _filter_out_null(x) -> bool:

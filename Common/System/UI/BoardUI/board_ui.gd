@@ -31,6 +31,7 @@ func _on_arrange_heroes(exception : Hero = null) -> void:
 		if HERO_ARR[i] == exception : continue
 		HERO_ARR[i].move_to(%HeroSlotContainer.get_child(i).global_position - global_position)
 		HERO_ARR[i].data.position_index = i
+		HERO_ARR[i].temp_data.position_index = i
 
 func setup_units() -> void:
 	for unit in get_tree().get_nodes_in_group("Units"):
@@ -48,8 +49,7 @@ func initiate_combat() -> void:
 	input_handler.disabled = true
 	combat_handler.handle_combat()
 	
-	
-
 
 func _on_start_combat_button_pressed() -> void:
 	initiate_combat()
+	$StartCombatButton.visible = false

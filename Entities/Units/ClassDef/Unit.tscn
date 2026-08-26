@@ -10,6 +10,7 @@ resource_name = "ability"
 
 [sub_resource type="Animation" id="Animation_wve3x"]
 resource_name = "attack"
+step = 0.2
 
 [sub_resource type="Animation" id="Animation_frdbc"]
 resource_name = "death"
