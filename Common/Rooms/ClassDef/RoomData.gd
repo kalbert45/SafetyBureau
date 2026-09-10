@@ -6,7 +6,7 @@ class_name RoomData extends Resource
 enum ROOM_TYPE {
 	NULL,
 	INITIAL, DOOR, 
-	LEVEL, ELITE, BOSS,
+	COMBAT, ELITE, BOSS,
 	ARTIFACT_SHOP, ARCANA_SHOP
 	}
 

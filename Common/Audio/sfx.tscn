@@ -3,4 +3,5 @@
 [ext_resource type="Script" uid="uid://xowb40q1dmie" path="res://Common/Audio/sfx.gd" id="1_jdaoe"]
 
 [node name="Sfx" type="AudioStreamPlayer" unique_id=191472639]
+bus = &"SFX"
 script = ExtResource("1_jdaoe")

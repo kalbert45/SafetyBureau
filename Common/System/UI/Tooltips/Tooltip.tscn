@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://sbe1prrpcq1g"]
+
+[ext_resource type="Script" uid="uid://d1py1bdav5m3r" path="res://Common/System/UI/Tooltips/tooltip.gd" id="1_7fm5v"]
+[ext_resource type="FontFile" uid="uid://cblc84267baw2" path="res://Assets/Fonts/LibreBaskerville-VariableFont_wght.ttf" id="1_kgwml"]
+[ext_resource type="Theme" uid="uid://doclxufrwquue" path="res://Assets/Themes/tooltip_panel_theme.tres" id="2_7fm5v"]
+
+[node name="Tooltip" type="Control" unique_id=1809126419]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1_7fm5v")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1423811273]
+texture_filter = 1
+layout_mode = 1
+offset_right = 540.0
+offset_bottom = 16.0
+mouse_filter = 2
+theme = ExtResource("2_7fm5v")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer" unique_id=662361532]
+layout_mode = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("1_kgwml")
+theme_override_font_sizes/normal_font_size = 24
+text = "test text"
+fit_content = true

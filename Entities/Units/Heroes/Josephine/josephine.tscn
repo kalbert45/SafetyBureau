@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b5fxhx1s0qntl"]
 
 [ext_resource type="PackedScene" uid="uid://cma0jgvt1mhp3" path="res://Entities/Units/Heroes/ClassDef/hero.tscn" id="1_w1pnf"]
+[ext_resource type="Texture2D" uid="uid://snoyl0ysoxf5" path="res://Entities/Units/ClassDef/concept_unit_tex.png" id="2_rkgcj"]
 
 [sub_resource type="Animation" id="Animation_myuce"]
 length = 0.001
@@ -153,7 +154,11 @@ _data = {
 [node name="Josephine" unique_id=1767766882 instance=ExtResource("1_w1pnf")]
 
 [node name="Sprite2D" parent="." index="0" unique_id=1440963874]
-modulate = Color(1, 0.59000003, 0.59000003, 1)
+visible = false
 
 [node name="AnimationPlayer" parent="." index="1" unique_id=133131674]
 libraries/ = SubResource("AnimationLibrary_myuce")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." index="4" unique_id=628313908]
+position = Vector2(25, -2)
+texture = ExtResource("2_rkgcj")

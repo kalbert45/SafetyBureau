@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://fdmyvxw44wr4"]
+
+[ext_resource type="Script" uid="uid://ij3g7sbv7qxu" path="res://Common/System/UI/Tooltips/tooltip_handler.gd" id="1_kbvjv"]
+[ext_resource type="PackedScene" uid="uid://sbe1prrpcq1g" path="res://Common/System/UI/Tooltips/Tooltip.tscn" id="1_xqr1n"]
+
+[node name="TooltipHandler" type="Control" unique_id=750903987]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+script = ExtResource("1_kbvjv")
+
+[node name="TooltipSubviewportContainer" type="SubViewportContainer" parent="." unique_id=1576818675]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="SubViewport" type="SubViewport" parent="TooltipSubviewportContainer" unique_id=251200346]
+transparent_bg = true
+handle_input_locally = false
+msaa_2d = 1
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="TooltipHUD" type="CanvasLayer" parent="TooltipSubviewportContainer/SubViewport" unique_id=83113509]
+
+[node name="Tooltip" parent="TooltipSubviewportContainer/SubViewport/TooltipHUD" unique_id=1809126419 instance=ExtResource("1_xqr1n")]
+unique_name_in_owner = true
+visible = false

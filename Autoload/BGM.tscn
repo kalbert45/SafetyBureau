@@ -2,5 +2,18 @@
 
 [ext_resource type="Script" uid="uid://dxgqikqjtn21c" path="res://Autoload/BGM.gd" id="1_hgeje"]
 
-[node name="Bgm" type="Node" unique_id=1889436737]
+[node name="Bgm" type="Node" unique_id=479415187]
 script = ExtResource("1_hgeje")
+
+[node name="Ambience" type="AudioStreamPlayer" parent="." unique_id=417670735]
+volume_db = -4.0
+bus = &"Ambience"
+
+[node name="BgmTrack1" type="AudioStreamPlayer" parent="." unique_id=1670529229]
+bus = &"BGM"
+
+[node name="BgmTrack2" type="AudioStreamPlayer" parent="." unique_id=51775980]
+bus = &"BGM"
+
+[connection signal="finished" from="BgmTrack1" to="." method="_on_bgm_track_1_finished"]
+[connection signal="finished" from="BgmTrack2" to="." method="_on_bgm_track_2_finished"]

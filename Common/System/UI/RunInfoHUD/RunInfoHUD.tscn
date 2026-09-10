@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dv4cf20q8qyaf"]
+
+[ext_resource type="Script" uid="uid://cw6ujgu8g88dq" path="res://Common/System/UI/RunInfoHUD/run_info_hud.gd" id="1_5anfe"]
+[ext_resource type="FontFile" uid="uid://dxrfvq88nleri" path="res://Assets/Fonts/Fabled_Font.ttf" id="1_t0ky4"]
+
+[node name="RunInfoHud" type="Control" unique_id=1316618943]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_5anfe")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1870909958]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 640.0
+offset_bottom = 24.0
+mouse_filter = 2
+color = Color(0.043137256, 0.0627451, 0.08627451, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1392050735]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 196.0
+offset_bottom = 48.0
+theme_override_colors/default_color = Color(0.8901961, 0.8666667, 0.81960785, 1)
+theme_override_fonts/normal_font = ExtResource("1_t0ky4")
+theme_override_font_sizes/normal_font_size = 10
+text = "1000 Coins"
+
+[node name="Marker2D" type="Marker2D" parent="RichTextLabel" unique_id=263875930]
+position = Vector2(11, 39)
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1543671964]
+layout_mode = 0
+offset_left = 265.0
+offset_top = 6.0
+offset_right = 453.0
+offset_bottom = 48.0
+theme_override_colors/default_color = Color(0.8901961, 0.8666667, 0.81960785, 1)
+theme_override_fonts/normal_font = ExtResource("1_t0ky4")
+theme_override_font_sizes/normal_font_size = 10
+text = "Floor 8"
+
+[connection signal="mouse_entered" from="RichTextLabel" to="." method="_on_rich_text_label_mouse_entered"]
+[connection signal="mouse_exited" from="RichTextLabel" to="." method="_on_rich_text_label_mouse_exited"]

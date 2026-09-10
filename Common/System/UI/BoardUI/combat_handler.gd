@@ -42,9 +42,13 @@ func arrange_units() -> void:
 
 func check_combat_end() -> void:
 	if HERO_ARR.is_empty() or ENEMY_ARR.is_empty():
-		for unit : Unit in get_tree().get_nodes_in_group("Units"):
-			if is_instance_valid(unit):
-				unit.stop_combat()
+		end_combat()
+
+func end_combat() -> void:
+	for unit : Unit in get_tree().get_nodes_in_group("Units"):
+		if is_instance_valid(unit):
+			unit.stop_combat()
+	SignalBus.end_combat.emit()
 
 #-----------------------
 

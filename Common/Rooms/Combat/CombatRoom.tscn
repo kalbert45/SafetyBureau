@@ -1,8 +1,108 @@
 [gd_scene format=3 uid="uid://cj4o0fk8inb0x"]
 
 [ext_resource type="Script" uid="uid://t7vmwpsnio30" path="res://Common/Rooms/Combat/combat_room.gd" id="1_pu8qm"]
-[ext_resource type="Texture2D" uid="uid://bgqnjd1qcscec" path="res://Entities/Envs/Maps/TEST_MAP/office_background.png" id="2_gwxad"]
+[ext_resource type="Texture2D" uid="uid://ry61agogpi88" path="res://Entities/Envs/Maps/TEST_MAP/field_background.png" id="2_gwxad"]
 [ext_resource type="PackedScene" uid="uid://crc4aqsb6olf8" path="res://Common/System/UI/BoardUI/board_ui.tscn" id="2_msmif"]
+
+[sub_resource type="Animation" id="Animation_gwxad"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TopBar:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TopBar:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-57, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BottomBar:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BottomBar:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(303, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_mywk8"]
+resource_name = "narrow_bars"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TopBar:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TopBar:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(-57, -0.25, 0, 0.25, 0, 9, -0.13333333, -33, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BottomBar:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BottomBar:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(303, -0.25, 0, 0.25, 0, 237, -0.13333333, 26, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ob3v4"]
+_data = {
+&"RESET": SubResource("Animation_gwxad"),
+&"narrow_bars": SubResource("Animation_mywk8")
+}
 
 [node name="CombatRoom" type="Control" unique_id=1752784683]
 layout_mode = 3
@@ -25,6 +125,28 @@ offset_right = 640.0
 offset_bottom = 360.0
 mouse_filter = 2
 texture = ExtResource("2_gwxad")
+
+[node name="BlackBars" type="Control" parent="Env" unique_id=569928214]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TopBar" type="ColorRect" parent="Env/BlackBars" unique_id=1244767821]
+layout_mode = 0
+offset_top = -57.0
+offset_right = 650.3334
+offset_bottom = 16.666672
+color = Color(0.043137256, 0.0627451, 0.08627451, 1)
+
+[node name="BottomBar" type="ColorRect" parent="Env/BlackBars" unique_id=2079346066]
+layout_mode = 0
+offset_top = 303.0
+offset_right = 650.3334
+offset_bottom = 376.66687
+color = Color(0.043137256, 0.0627451, 0.08627451, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Env/BlackBars" unique_id=1972114364]
+libraries/ = SubResource("AnimationLibrary_ob3v4")
 
 [node name="BoardUI" parent="." unique_id=1596163736 instance=ExtResource("2_msmif")]
 layout_mode = 1

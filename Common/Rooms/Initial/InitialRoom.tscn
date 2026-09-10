@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://ck73ps4hcbn0a"]
+
+[ext_resource type="Script" uid="uid://cmmyb6w6piwec" path="res://Common/Rooms/Initial/initial_room.gd" id="1_7nwy4"]
+[ext_resource type="Texture2D" uid="uid://ry61agogpi88" path="res://Entities/Envs/Maps/TEST_MAP/field_background.png" id="2_5kup0"]
+[ext_resource type="FontFile" uid="uid://dxrfvq88nleri" path="res://Assets/Fonts/Fabled_Font.ttf" id="3_3dwd1"]
+[ext_resource type="Texture2D" uid="uid://snoyl0ysoxf5" path="res://Entities/Units/ClassDef/concept_unit_tex.png" id="3_i88km"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r2hnv"]
+bg_color = Color(0.5176471, 0.47058824, 0.45882353, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.42352942, 0.34901962, 0.36078432, 1)
+
+[node name="InitialRoom" type="Control" unique_id=278532218]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7nwy4")
+
+[node name="Env" type="Control" parent="." unique_id=1399204770]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Env" unique_id=160269367]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+mouse_filter = 2
+texture = ExtResource("2_5kup0")
+
+[node name="Button" type="Button" parent="." unique_id=938789974]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 288.0
+offset_right = 582.0
+offset_bottom = 319.0
+text = "initial"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1095247804]
+layout_mode = 0
+offset_left = 157.0
+offset_top = 108.0
+offset_right = 447.0
+offset_bottom = 221.0
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer" unique_id=1109335406]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_r2hnv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer" unique_id=612864923]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/PanelContainer/VBoxContainer" unique_id=924370859]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("3_3dwd1")
+theme_override_font_sizes/normal_font_size = 10
+text = "Josephine"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/PanelContainer/VBoxContainer" unique_id=70494810]
+layout_mode = 2
+texture = ExtResource("3_i88km")
+stretch_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer" unique_id=1037341082]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_r2hnv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer2" unique_id=1041799808]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/PanelContainer2/VBoxContainer" unique_id=1646272116]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("3_3dwd1")
+theme_override_font_sizes/normal_font_size = 10
+text = "Josephine"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/PanelContainer2/VBoxContainer" unique_id=691482496]
+layout_mode = 2
+texture = ExtResource("3_i88km")
+stretch_mode = 2
+
+[node name="PanelContainer3" type="PanelContainer" parent="HBoxContainer" unique_id=687900999]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_r2hnv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer3" unique_id=245167112]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/PanelContainer3/VBoxContainer" unique_id=1100148848]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("3_3dwd1")
+theme_override_font_sizes/normal_font_size = 10
+text = "Josephine"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/PanelContainer3/VBoxContainer" unique_id=1759977870]
+layout_mode = 2
+texture = ExtResource("3_i88km")
+stretch_mode = 2
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

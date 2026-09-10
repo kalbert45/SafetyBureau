@@ -1,6 +1,15 @@
 [gd_scene format=3 uid="uid://brsj0maf7b31d"]
 
 [ext_resource type="Script" uid="uid://dki0myfy6h4uf" path="res://Common/System/Game/game.gd" id="1_cipvr"]
+[ext_resource type="Script" uid="uid://c7i26g5ujjj6f" path="res://Common/System/Game/room_handler.gd" id="2_q6j60"]
+[ext_resource type="Shader" uid="uid://bl8ibxd8s7l4l" path="res://Assets/Shaders/filmgrain.gdshader" id="3_28kk5"]
+[ext_resource type="PackedScene" uid="uid://dv4cf20q8qyaf" path="res://Common/System/UI/RunInfoHUD/RunInfoHUD.tscn" id="3_f57ao"]
+[ext_resource type="PackedScene" uid="uid://ck73ps4hcbn0a" path="res://Common/Rooms/Initial/InitialRoom.tscn" id="3_q6j60"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r2hnv"]
+shader = ExtResource("3_28kk5")
+shader_parameter/grain_amount = 0.0400000019
+shader_parameter/grain_size = 0.50000002049012
 
 [node name="Game" type="Control" unique_id=1750254476]
 layout_mode = 3
@@ -11,9 +20,41 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cipvr")
 
-[node name="RoomHandler" type="Control" parent="." unique_id=1857723506]
+[node name="WorldSubviewportContainer" type="SubViewportContainer" parent="." unique_id=928597823]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(3, 3)
+
+[node name="SubViewport" type="SubViewport" parent="WorldSubviewportContainer" unique_id=2027162032]
+handle_input_locally = false
+snap_2d_transforms_to_pixel = true
+physics_object_picking = true
+size = Vector2i(640, 360)
+render_target_update_mode = 4
+
+[node name="RoomHandler" type="Control" parent="WorldSubviewportContainer/SubViewport" unique_id=1857723506]
+layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("2_q6j60")
 
-[node name="HUD" type="CanvasLayer" parent="." unique_id=475624413]
+[node name="InitialRoom" parent="WorldSubviewportContainer/SubViewport/RoomHandler" unique_id=278532218 instance=ExtResource("3_q6j60")]
+layout_mode = 1
+
+[node name="HUD" type="CanvasLayer" parent="WorldSubviewportContainer/SubViewport" unique_id=1672914750]
+
+[node name="RunInfoHud" parent="WorldSubviewportContainer/SubViewport/HUD" unique_id=1316618943 instance=ExtResource("3_f57ao")]
+
+[node name="PostProcess" type="CanvasLayer" parent="WorldSubviewportContainer/SubViewport" unique_id=408083367]
+layer = 10
+
+[node name="FilmGrain" type="ColorRect" parent="WorldSubviewportContainer/SubViewport/PostProcess" unique_id=621689914]
+material = SubResource("ShaderMaterial_r2hnv")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

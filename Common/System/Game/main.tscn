@@ -1,6 +1,16 @@
 [gd_scene format=3 uid="uid://bkrd8peg83te5"]
 
 [ext_resource type="Script" uid="uid://ffynapt4v384" path="res://Common/System/Game/main.gd" id="1_kg6k7"]
+[ext_resource type="PackedScene" uid="uid://brsj0maf7b31d" path="res://Common/System/Game/Game.tscn" id="2_rmf55"]
+[ext_resource type="Script" uid="uid://cwwoknobjfthi" path="res://Common/System/Game/bgm_handler.gd" id="3_xfr4c"]
+[ext_resource type="PackedScene" uid="uid://fdmyvxw44wr4" path="res://Common/System/UI/Tooltips/tooltip_handler.tscn" id="4_8287c"]
 
 [node name="Main" type="Node" unique_id=2129199340]
 script = ExtResource("1_kg6k7")
+
+[node name="Game" parent="." unique_id=1750254476 instance=ExtResource("2_rmf55")]
+
+[node name="BgmHandler" type="Node" parent="." unique_id=1552821990]
+script = ExtResource("3_xfr4c")
+
+[node name="TooltipHandler" parent="." unique_id=750903987 instance=ExtResource("4_8287c")]

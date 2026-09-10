@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://sfuroh6n181h"]
+
+[ext_resource type="Script" uid="uid://cyqm11itr8yfr" path="res://Common/Rooms/Door/door_room.gd" id="1_p1asa"]
+[ext_resource type="Texture2D" uid="uid://ry61agogpi88" path="res://Entities/Envs/Maps/TEST_MAP/field_background.png" id="2_0yjl0"]
+
+[node name="DoorRoom" type="Control" unique_id=384176819]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p1asa")
+
+[node name="Env" type="Control" parent="." unique_id=1032632949]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Env" unique_id=1735191751]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+mouse_filter = 2
+texture = ExtResource("2_0yjl0")
+
+[node name="Button" type="Button" parent="." unique_id=707938581]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 228.0
+offset_right = 475.0
+offset_bottom = 259.0
+text = "combat"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

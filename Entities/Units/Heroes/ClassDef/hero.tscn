@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://0838nvrrrsjl" path="res://Entities/Units/Heroes/ClassDef/hero.gd" id="2_qsbk4"]
 [ext_resource type="Script" uid="uid://b1kvhgao5jabx" path="res://Entities/Units/Heroes/ClassDef/HeroData.gd" id="3_k8pc2"]
 [ext_resource type="Texture2D" uid="uid://b2hlxny8w3oos" path="res://Entities/Units/ClassDef/filler_unit-spritesheet.png" id="4_tlsav"]
+[ext_resource type="Shader" uid="uid://xgr5ipgh8ojf" path="res://Assets/Shaders/remove_alpha.gdshader" id="5_ff8d8"]
+[ext_resource type="FontFile" uid="uid://dxrfvq88nleri" path="res://Assets/Fonts/Fabled_Font.ttf" id="6_ff8d8"]
 
 [sub_resource type="Resource" id="Resource_7vp5p"]
 script = ExtResource("3_k8pc2")
@@ -182,6 +184,20 @@ _data = {
 &"stagger": SubResource("Animation_x8u5d")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mxyms"]
+shader = ExtResource("5_ff8d8")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ws5lw"]
+content_margin_top = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r2hnv"]
+bg_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.5176471, 0.47058824, 0.45882353, 1)
+
 [node name="Hero" unique_id=1767766882 instance=ExtResource("1_be2im")]
 script = ExtResource("2_qsbk4")
 data = SubResource("Resource_7vp5p")
@@ -196,3 +212,37 @@ libraries/ = SubResource("AnimationLibrary_68grf")
 
 [node name="HealthComponent" parent="." index="2" unique_id=1025099558]
 mouse_filter = 2
+
+[node name="HealthLabel" type="RichTextLabel" parent="." index="4" unique_id=152163360]
+material = SubResource("ShaderMaterial_mxyms")
+layout_mode = 0
+offset_left = 8.0
+offset_top = -64.0
+offset_right = 48.0
+offset_bottom = -24.0
+theme_override_colors/default_color = Color(0.9764706, 0.7607843, 0.16862746, 1)
+theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("6_ff8d8")
+theme_override_font_sizes/normal_font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ws5lw")
+text = "Lvl 1"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="." index="5" unique_id=1541589263]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -89.0
+offset_right = 24.0
+offset_bottom = -72.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_r2hnv")
+
+[node name="Panel2" type="Panel" parent="." index="6" unique_id=6418684]
+layout_mode = 0
+offset_left = 28.0
+offset_top = -89.0
+offset_right = 45.0
+offset_bottom = -72.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_r2hnv")

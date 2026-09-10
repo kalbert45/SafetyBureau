@@ -21,8 +21,14 @@ func _ready() -> void:
 	combat_handler.ENEMY_ARR = ENEMY_ARR
 	
 	# instantiate units based on data
+	for hero_data : HeroData in GameState.HERO_DATA_ARR:
+		var hero : Hero = load(hero_data.HERO_SCENE_PATHS[hero_data.hero_enum]).instantiate()
+		hero.data = hero_data
+		%HeroContainer.add_child(hero)
 	
 	# then, setup units
+	await get_tree().process_frame
+	await get_tree().process_frame
 	setup_units()
 
 func _on_arrange_heroes(exception : Hero = null) -> void:
@@ -41,6 +47,8 @@ func setup_units() -> void:
 		
 		if unit is Hero:
 			HERO_ARR[unit.data.position_index] = unit
+			unit.position = %HeroSlotContainer.get_child(unit.data.position_index).global_position - global_position
+			
 			
 		elif unit is Enemy:
 			ENEMY_ARR[unit.data.position_index] = unit
@@ -51,5 +59,6 @@ func initiate_combat() -> void:
 	
 
 func _on_start_combat_button_pressed() -> void:
+	SignalBus.begin_combat.emit()
 	initiate_combat()
 	$StartCombatButton.visible = false

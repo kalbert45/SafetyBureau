@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cadn32ylb7ugn"]
+
+[ext_resource type="PackedScene" uid="uid://cma0jgvt1mhp3" path="res://Entities/Units/Heroes/ClassDef/hero.tscn" id="1_urrha"]
+[ext_resource type="Texture2D" uid="uid://cjaebc8ceedwv" path="res://Entities/Units/ClassDef/concept_unit_tex2.png" id="2_xqka3"]
+
+[node name="Sig" unique_id=1767766882 instance=ExtResource("1_urrha")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=1440963874]
+visible = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="." index="4" unique_id=2130238710]
+position = Vector2(27, -1)
+texture = ExtResource("2_xqka3")

@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://csuvcle6046p5"]
+
+[ext_resource type="Script" uid="uid://c7dnb36f4lqwa" path="res://Common/Rooms/Shops/shop_room.gd" id="1_mf6yr"]
+[ext_resource type="Texture2D" uid="uid://ry61agogpi88" path="res://Entities/Envs/Maps/TEST_MAP/field_background.png" id="2_tq0bo"]
+[ext_resource type="PackedScene" uid="uid://crc4aqsb6olf8" path="res://Common/System/UI/BoardUI/board_ui.tscn" id="3_cioos"]
+[ext_resource type="FontFile" uid="uid://dxrfvq88nleri" path="res://Assets/Fonts/Fabled_Font.ttf" id="4_ubd80"]
+[ext_resource type="Texture2D" uid="uid://snoyl0ysoxf5" path="res://Entities/Units/ClassDef/concept_unit_tex.png" id="5_kxyk3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ubd80"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kxyk3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bqy2p"]
+
+[node name="ShopRoom" type="Control" unique_id=1190669690]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mf6yr")
+
+[node name="Env" type="Control" parent="." unique_id=291790627]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Env" unique_id=1219155974]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+mouse_filter = 2
+texture = ExtResource("2_tq0bo")
+
+[node name="BoardUI" parent="." unique_id=1596163736 instance=ExtResource("3_cioos")]
+layout_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2029078259]
+layout_mode = 0
+offset_left = 369.0
+offset_top = 100.0
+offset_right = 659.0
+offset_bottom = 213.0
+theme_override_constants/separation = -27
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer" unique_id=213520064]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ubd80")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer" unique_id=1218046504]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/PanelContainer/VBoxContainer" unique_id=1272245802]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("4_ubd80")
+theme_override_font_sizes/normal_font_size = 10
+text = "Josephine"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/PanelContainer/VBoxContainer" unique_id=1749802611]
+layout_mode = 2
+texture = ExtResource("5_kxyk3")
+stretch_mode = 2
+flip_h = true
+
+[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer" unique_id=513397380]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_kxyk3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer2" unique_id=1247285438]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/PanelContainer2/VBoxContainer" unique_id=1025277048]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("4_ubd80")
+theme_override_font_sizes/normal_font_size = 10
+text = "Josephine"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/PanelContainer2/VBoxContainer" unique_id=960258706]
+layout_mode = 2
+texture = ExtResource("5_kxyk3")
+stretch_mode = 2
+flip_h = true
+
+[node name="PanelContainer3" type="PanelContainer" parent="HBoxContainer" unique_id=1183458155]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bqy2p")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer3" unique_id=903410071]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/PanelContainer3/VBoxContainer" unique_id=1584671259]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("4_ubd80")
+theme_override_font_sizes/normal_font_size = 10
+text = "Josephine"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/PanelContainer3/VBoxContainer" unique_id=1979753193]
+layout_mode = 2
+texture = ExtResource("5_kxyk3")
+stretch_mode = 2
+flip_h = true

@@ -36,6 +36,8 @@ func _ready() -> void:
 	cd_component.use_attack.connect(use_attack)
 	cd_component.use_ability.connect(use_ability)
 	
+	health_component.set_health(max_health)
+	
 
 #----------- LOCALLY DEFINED -----------------
 func start_combat() -> void:

@@ -53,9 +53,9 @@ autoplay = &"idle"
 
 [node name="HealthComponent" parent="." unique_id=1025099558 instance=ExtResource("2_hge4a")]
 layout_mode = 1
-offset_left = 17.0
+offset_left = 9.0
 offset_top = 41.0
-offset_right = 17.0
+offset_right = 9.0
 offset_bottom = 41.0
 
 [node name="CDComponent" parent="." unique_id=613800876 instance=ExtResource("4_wve3x")]

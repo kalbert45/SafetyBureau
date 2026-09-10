@@ -1,7 +1,15 @@
 [gd_scene format=3 uid="uid://brjqc8kh0u3xh"]
 
 [ext_resource type="Script" uid="uid://b3l3oxir6fbri" path="res://Entities/Units/ClassDef/health_component.gd" id="1_m1jvl"]
+[ext_resource type="Shader" uid="uid://xgr5ipgh8ojf" path="res://Assets/Shaders/remove_alpha.gdshader" id="2_0qme2"]
 [ext_resource type="FontFile" uid="uid://dk2q8sqeish0u" path="res://Assets/Fonts/Nope 8.ttf" id="2_f8t1j"]
+[ext_resource type="FontFile" uid="uid://dxrfvq88nleri" path="res://Assets/Fonts/Fabled_Font.ttf" id="3_rnyhp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ff8d8"]
+shader = ExtResource("2_0qme2")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ff8d8"]
+content_margin_top = 1.0
 
 [node name="HealthComponent" type="Control" unique_id=1025099558]
 layout_mode = 3
@@ -12,9 +20,30 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_m1jvl")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=53282386]
+[node name="HealthLabel" type="RichTextLabel" parent="." unique_id=53282386]
+material = SubResource("ShaderMaterial_ff8d8")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("3_rnyhp")
+theme_override_font_sizes/normal_font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ff8d8")
+text = "100"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="ShieldLabel" type="RichTextLabel" parent="." unique_id=1751586133]
+visible = false
+layout_mode = 0
+offset_top = 16.0
+offset_right = 40.0
+offset_bottom = 56.0
+theme_override_colors/default_color = Color(0.5803922, 0.78431374, 0.9843137, 1)
 theme_override_fonts/normal_font = ExtResource("2_f8t1j")
 text = "100"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1

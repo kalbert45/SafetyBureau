@@ -11,7 +11,8 @@ var shield := 0 :
 # affects label
 func set_health(value : int) -> void:
 	health = value
-	$RichTextLabel.text = str(health)
+	$HealthLabel.text = str(health)
+	$ShieldLabel.text = "[" + str(1000) + "]"
 
 # affects label
 func set_shield(value : int) -> void:
