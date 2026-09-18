@@ -4,6 +4,7 @@
 
 [node name="Bgm" type="Node" unique_id=479415187]
 script = ExtResource("1_hgeje")
+MUTED = true
 
 [node name="Ambience" type="AudioStreamPlayer" parent="." unique_id=417670735]
 volume_db = -4.0
