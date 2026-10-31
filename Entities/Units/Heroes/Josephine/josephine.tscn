@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://b5fxhx1s0qntl"]
 
 [ext_resource type="PackedScene" uid="uid://cma0jgvt1mhp3" path="res://Entities/Units/Heroes/ClassDef/hero.tscn" id="1_w1pnf"]
-[ext_resource type="Texture2D" uid="uid://snoyl0ysoxf5" path="res://Entities/Units/ClassDef/concept_unit_tex.png" id="2_rkgcj"]
+[ext_resource type="Texture2D" uid="uid://cjaebc8ceedwv" path="res://Entities/Units/ClassDef/concept_unit_tex2.png" id="2_rkgcj"]
+[ext_resource type="Shader" uid="uid://dfe1gue4fr4re" path="res://Assets/Shaders/pixel_outline.gdshader" id="2_t8wcv"]
 
 [sub_resource type="Animation" id="Animation_myuce"]
 length = 0.001
@@ -151,14 +152,44 @@ _data = {
 &"stagger": SubResource("Animation_vmux5")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wljxx"]
+shader = ExtResource("2_t8wcv")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/albedo_strength = 1.0
+shader_parameter/clr = Color(0.3529412, 0.3254902, 0.3254902, 1)
+shader_parameter/type = 1
+shader_parameter/thickness = 1.0
+
 [node name="Josephine" unique_id=1767766882 instance=ExtResource("1_w1pnf")]
 
 [node name="Sprite2D" parent="." index="0" unique_id=1440963874]
 visible = false
+position = Vector2(26, -1)
 
 [node name="AnimationPlayer" parent="." index="1" unique_id=133131674]
 libraries/ = SubResource("AnimationLibrary_myuce")
 
+[node name="HealthComponent" parent="." index="2" unique_id=1025099558]
+offset_right = 0.0
+offset_bottom = 92.0
+
+[node name="CDComponent" parent="." index="3" unique_id=613800876]
+offset_right = -46.0
+offset_bottom = -92.0
+
 [node name="Sprite2D2" type="Sprite2D" parent="." index="4" unique_id=628313908]
-position = Vector2(25, -2)
+material = SubResource("ShaderMaterial_wljxx")
+position = Vector2(29, 41)
 texture = ExtResource("2_rkgcj")
+
+[node name="HealthLabel" parent="." index="5" unique_id=152163360]
+offset_left = 4.0
+offset_right = 44.0
+
+[node name="Panel" parent="." index="6" unique_id=1541589263]
+offset_left = 3.0
+offset_right = 20.0
+
+[node name="Panel2" parent="." index="7" unique_id=6418684]
+offset_left = 24.0
+offset_right = 41.0

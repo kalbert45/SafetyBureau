@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://dllei5jocgd3r"]
+
+[ext_resource type="Script" uid="uid://cltnt4mswrdnb" path="res://Common/System/UI/ItemSystem/ClassDef/item_slot.gd" id="1_ijufe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ctciw"]
+bg_color = Color(0.12156863, 0.12156863, 0.16078432, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.3529412, 0.3254902, 0.3254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ijufe"]
+bg_color = Color(0.121599995, 0.121599995, 0.16, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.627451, 0.5764706, 0.5568628, 1)
+
+[node name="ItemSlot" type="Control" unique_id=1730077785]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -640.0
+offset_bottom = -360.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ijufe")
+
+[node name="Panel" type="Panel" parent="." unique_id=1322090190]
+layout_mode = 0
+offset_right = 17.0
+offset_bottom = 17.0
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_ctciw")
+
+[node name="ItemTex" type="TextureRect" parent="." unique_id=1984768099]
+layout_mode = 0
+offset_right = 17.0
+offset_bottom = 17.0
+mouse_filter = 2
+stretch_mode = 2
+
+[node name="HoverPanel" type="Panel" parent="." unique_id=1562003107]
+visible = false
+layout_mode = 0
+offset_right = 17.0
+offset_bottom = 17.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ijufe")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

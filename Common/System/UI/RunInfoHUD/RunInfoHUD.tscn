@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cw6ujgu8g88dq" path="res://Common/System/UI/RunInfoHUD/run_info_hud.gd" id="1_5anfe"]
 [ext_resource type="FontFile" uid="uid://dxrfvq88nleri" path="res://Assets/Fonts/Fabled_Font.ttf" id="1_t0ky4"]
+[ext_resource type="PackedScene" uid="uid://dsli5jsvbygh5" path="res://Common/System/UI/RunInfoHUD/item_bench.tscn" id="3_5anfe"]
+[ext_resource type="PackedScene" uid="uid://dkc8wkxwvy6ou" path="res://Common/System/UI/RunInfoHUD/unit_display.tscn" id="4_2i24m"]
+[ext_resource type="PackedScene" uid="uid://d14ppe2apulf2" path="res://Common/System/UI/RunInfoHUD/damage_chart.tscn" id="5_ipyba"]
 
 [node name="RunInfoHud" type="Control" unique_id=1316618943]
 layout_mode = 3
@@ -13,13 +16,13 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_5anfe")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1870909958]
+[node name="TopRect" type="ColorRect" parent="." unique_id=1870909958]
 layout_mode = 0
 offset_top = -1.0
 offset_right = 640.0
 offset_bottom = 24.0
 mouse_filter = 2
-color = Color(0.043137256, 0.0627451, 0.08627451, 1)
+color = Color(0.12156863, 0.12156863, 0.16078432, 1)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1392050735]
 layout_mode = 0
@@ -27,24 +30,35 @@ offset_left = 8.0
 offset_top = 6.0
 offset_right = 196.0
 offset_bottom = 48.0
-theme_override_colors/default_color = Color(0.8901961, 0.8666667, 0.81960785, 1)
+theme_override_colors/default_color = Color(1, 0.9490196, 0.9019608, 1)
 theme_override_fonts/normal_font = ExtResource("1_t0ky4")
 theme_override_font_sizes/normal_font_size = 10
 text = "1000 Coins"
 
-[node name="Marker2D" type="Marker2D" parent="RichTextLabel" unique_id=263875930]
-position = Vector2(11, 39)
-
 [node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1543671964]
 layout_mode = 0
-offset_left = 265.0
+offset_left = 283.0
 offset_top = 6.0
-offset_right = 453.0
+offset_right = 471.0
 offset_bottom = 48.0
-theme_override_colors/default_color = Color(0.8901961, 0.8666667, 0.81960785, 1)
+theme_override_colors/default_color = Color(1, 0.9490196, 0.9019608, 1)
 theme_override_fonts/normal_font = ExtResource("1_t0ky4")
 theme_override_font_sizes/normal_font_size = 10
 text = "Floor 8"
 
-[connection signal="mouse_entered" from="RichTextLabel" to="." method="_on_rich_text_label_mouse_entered"]
-[connection signal="mouse_exited" from="RichTextLabel" to="." method="_on_rich_text_label_mouse_exited"]
+[node name="BottomRect" type="ColorRect" parent="." unique_id=455616057]
+layout_mode = 0
+offset_top = 261.0
+offset_right = 640.0
+offset_bottom = 360.0
+mouse_filter = 2
+color = Color(0.12156863, 0.12156863, 0.16078432, 1)
+
+[node name="ItemBench" parent="." unique_id=1002776891 instance=ExtResource("3_5anfe")]
+layout_mode = 0
+
+[node name="UnitDisplay" parent="." unique_id=189300174 instance=ExtResource("4_2i24m")]
+layout_mode = 0
+
+[node name="DamageChart" parent="." unique_id=893641467 instance=ExtResource("5_ipyba")]
+layout_mode = 0

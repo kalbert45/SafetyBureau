@@ -8,11 +8,11 @@ func _ready() -> void:
 	Bgm.fade_to_new_ambience("wind_ambience.ogg")
 	
 	Bgm.chained = true
-	Bgm.chained_track_path = "tense_theme.ogg"
-	Bgm.crossfade_bgm("tense_theme.ogg")
+	Bgm.chained_track_path = "preparation_cool.ogg"
+	Bgm.crossfade_bgm("preparation_cool.ogg")
 	
 func _on_begin_combat() -> void:
 	Bgm.crossfade_bgm("battle_theme.ogg")
 	
 func _on_end_combat() -> void:
-	Bgm.crossfade_bgm("tense_theme.ogg")
+	Bgm.crossfade_bgm("preparation_cool.ogg")

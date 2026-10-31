@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cr7oorvl2gc3p"]
+
+[ext_resource type="Script" uid="uid://bb7vhu002dgpv" path="res://Common/System/UI/ItemSystem/ClassDef/ItemUIHandler.gd" id="1_efcub"]
+
+[node name="ItemUiHandler" type="Node" unique_id=141669364]
+script = ExtResource("1_efcub")

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dkc8wkxwvy6ou"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r2hnv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.34901962, 0.34901962, 0.34901962, 1)
+
+[node name="UnitDisplay" type="Control" unique_id=189300174]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 214.0
+offset_top = 266.0
+offset_right = 254.0
+offset_bottom = 306.0
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=910021492]
+layout_mode = 0
+offset_right = 188.0
+offset_bottom = 87.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_r2hnv")

@@ -1,0 +1,272 @@
+[gd_scene format=3 uid="uid://dsli5jsvbygh5"]
+
+[ext_resource type="PackedScene" uid="uid://dllei5jocgd3r" path="res://Common/System/UI/ItemSystem/ClassDef/ItemSlot.tscn" id="1_3d1ej"]
+[ext_resource type="Resource" uid="uid://dofasmf4blbqo" path="res://Entities/Items/Tier0/BasicItem/I_DATA_BasicItem.tres" id="2_747x0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r2hnv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.34901962, 0.34901962, 0.34901962, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2i24m"]
+bg_color = Color(0.12156863, 0.12156863, 0.16078432, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.16862746, 0.19215687, 0.2509804, 1)
+
+[node name="ItemBench" type="Control" unique_id=1002776891]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 8.0
+offset_top = 267.0
+offset_right = 48.0
+offset_bottom = 307.0
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=1738638306]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 167.0
+offset_bottom = 86.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_r2hnv")
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=1947712162]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 4.0
+offset_right = 159.0
+offset_bottom = 70.0
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 8
+
+[node name="ItemSlot" parent="GridContainer" unique_id=1730077785 instance=ExtResource("1_3d1ej")]
+layout_mode = 2
+current_item_data = ExtResource("2_747x0")
+
+[node name="Panel" parent="GridContainer/ItemSlot" index="0" unique_id=1322090190]
+theme_override_styles/panel = SubResource("StyleBoxFlat_2i24m")
+
+[node name="ItemSlot2" parent="GridContainer" unique_id=985290494 instance=ExtResource("1_3d1ej")]
+layout_mode = 2
+
+[node name="Panel" parent="GridContainer/ItemSlot2" index="0" unique_id=1322090190]
+theme_override_styles/panel = SubResource("StyleBoxFlat_2i24m")
+
+[node name="ItemSlot3" parent="GridContainer" unique_id=478624793 instance=ExtResource("1_3d1ej")]
+layout_mode = 2
+
+[node name="Panel" parent="GridContainer/ItemSlot3" index="0" unique_id=1322090190]
+theme_override_styles/panel = SubResource("StyleBoxFlat_2i24m")
+
+[node name="ItemSlot4" parent="GridContainer" unique_id=1353326512 instance=ExtResource("1_3d1ej")]
+layout_mode = 2
+
+[node name="Panel" parent="GridContainer/ItemSlot4" index="0" unique_id=1322090190]
+theme_override_styles/panel = SubResource("StyleBoxFlat_2i24m")
+
+[node name="ItemSlot5" parent="GridContainer" unique_id=1379498195 instance=ExtResource("1_3d1ej")]
+layout_mode = 2
+
+[node name="Panel" parent="GridContainer/ItemSlot5" index="0" unique_id=1322090190]
+theme_override_styles/panel = SubResource("StyleBoxFlat_2i24m")
+
+[node name="ItemSlot6" parent="GridContainer" unique_id=1600103695 instance=ExtResource("1_3d1ej")]
+layout_mode = 2
+
+[node name="Panel" parent="GridContainer/ItemSlot6" index="0" unique_id=1322090190]
+theme_override_styles/panel = SubResource("StyleBoxFlat_2i24m")
+
+[node name="ItemSlot7" parent="GridContainer" unique_id=862144152 instance=ExtResource("1_3d1ej")]
+layout_mode = 2
+
+[node name="Panel" parent="GridContainer/ItemSlot7" index="0" unique_id=1322090190]
+theme_override_styles/panel = SubResource("StyleBoxFlat_2i24m")
+
+[node name="ItemSlot8" parent="GridContainer" unique_id=1848809414 instance=ExtResource("1_3d1ej")]
+layout_mode = 2
+
+[node name="Panel" parent="GridContainer/ItemSlot8" index="0" unique_id=1322090190]
+theme_override_styles/panel = SubResource("StyleBoxFlat_2i24m")
+
+[node name="ItemSlot9" parent="GridContainer" unique_id=464728710 instance=ExtResource("1_3d1ej")]
+layout_mode = 2
+
+[node name="Panel" parent="GridContainer/ItemSlot9" index="0" unique_id=1322090190]
+theme_override_styles/panel = SubResource("StyleBoxFlat_2i24m")
+
+[node name="ItemSlot10" parent="GridContainer" unique_id=1746573340 instance=ExtResource("1_3d1ej")]
+layout_mode = 2
+
+[node name="Panel" parent="GridContainer/ItemSlot10" index="0" unique_id=1322090190]
+theme_override_styles/panel = SubResource("StyleBoxFlat_2i24m")
+
+[node name="ItemSlot11" parent="GridContainer" unique_id=1684115255 instance=ExtResource("1_3d1ej")]
+layout_mode = 2
+
+[node name="Panel" parent="GridContainer/ItemSlot11" index="0" unique_id=1322090190]
+theme_override_styles/panel = SubResource("StyleBoxFlat_2i24m")
+
+[node name="ItemSlot12" parent="GridContainer" unique_id=466623292 instance=ExtResource("1_3d1ej")]
+layout_mode = 2
+
+[node name="Panel" parent="GridContainer/ItemSlot12" index="0" unique_id=1322090190]
+theme_override_styles/panel = SubResource("StyleBoxFlat_2i24m")
+
+[node name="ItemSlot13" parent="GridContainer" unique_id=956392534 instance=ExtResource("1_3d1ej")]
+layout_mode = 2
+
+[node name="Panel" parent="GridContainer/ItemSlot13" index="0" unique_id=1322090190]
+theme_override_styles/panel = SubResource("StyleBoxFlat_2i24m")
+
+[node name="ItemSlot14" parent="GridContainer" unique_id=559005143 instance=ExtResource("1_3d1ej")]
+layout_mode = 2
+
+[node name="Panel" parent="GridContainer/ItemSlot14" index="0" unique_id=1322090190]
+theme_override_styles/panel = SubResource("StyleBoxFlat_2i24m")
+
+[node name="ItemSlot15" parent="GridContainer" unique_id=677649036 instance=ExtResource("1_3d1ej")]
+layout_mode = 2
+
+[node name="Panel" parent="GridContainer/ItemSlot15" index="0" unique_id=1322090190]
+theme_override_styles/panel = SubResource("StyleBoxFlat_2i24m")
+
+[node name="ItemSlot16" parent="GridContainer" unique_id=462633381 instance=ExtResource("1_3d1ej")]
+layout_mode = 2
+
+[node name="Panel" parent="GridContainer/ItemSlot16" index="0" unique_id=1322090190]
+theme_override_styles/panel = SubResource("StyleBoxFlat_2i24m")
+
+[node name="ItemSlot17" parent="GridContainer" unique_id=451364084 instance=ExtResource("1_3d1ej")]
+layout_mode = 2
+
+[node name="Panel" parent="GridContainer/ItemSlot17" index="0" unique_id=1322090190]
+theme_override_styles/panel = SubResource("StyleBoxFlat_2i24m")
+
+[node name="ItemSlot18" parent="GridContainer" unique_id=1163413467 instance=ExtResource("1_3d1ej")]
+layout_mode = 2
+
+[node name="Panel" parent="GridContainer/ItemSlot18" index="0" unique_id=1322090190]
+theme_override_styles/panel = SubResource("StyleBoxFlat_2i24m")
+
+[node name="ItemSlot19" parent="GridContainer" unique_id=2135844413 instance=ExtResource("1_3d1ej")]
+layout_mode = 2
+
+[node name="Panel" parent="GridContainer/ItemSlot19" index="0" unique_id=1322090190]
+theme_override_styles/panel = SubResource("StyleBoxFlat_2i24m")
+
+[node name="ItemSlot20" parent="GridContainer" unique_id=724047072 instance=ExtResource("1_3d1ej")]
+layout_mode = 2
+
+[node name="Panel" parent="GridContainer/ItemSlot20" index="0" unique_id=1322090190]
+theme_override_styles/panel = SubResource("StyleBoxFlat_2i24m")
+
+[node name="ItemSlot21" parent="GridContainer" unique_id=1354475024 instance=ExtResource("1_3d1ej")]
+layout_mode = 2
+
+[node name="Panel" parent="GridContainer/ItemSlot21" index="0" unique_id=1322090190]
+theme_override_styles/panel = SubResource("StyleBoxFlat_2i24m")
+
+[node name="ItemSlot22" parent="GridContainer" unique_id=556686984 instance=ExtResource("1_3d1ej")]
+layout_mode = 2
+
+[node name="Panel" parent="GridContainer/ItemSlot22" index="0" unique_id=1322090190]
+theme_override_styles/panel = SubResource("StyleBoxFlat_2i24m")
+
+[node name="ItemSlot23" parent="GridContainer" unique_id=2091591589 instance=ExtResource("1_3d1ej")]
+layout_mode = 2
+
+[node name="Panel" parent="GridContainer/ItemSlot23" index="0" unique_id=1322090190]
+theme_override_styles/panel = SubResource("StyleBoxFlat_2i24m")
+
+[node name="ItemSlot24" parent="GridContainer" unique_id=1720333557 instance=ExtResource("1_3d1ej")]
+layout_mode = 2
+
+[node name="Panel" parent="GridContainer/ItemSlot24" index="0" unique_id=1322090190]
+theme_override_styles/panel = SubResource("StyleBoxFlat_2i24m")
+
+[node name="ItemSlot25" parent="GridContainer" unique_id=669800000 instance=ExtResource("1_3d1ej")]
+layout_mode = 2
+
+[node name="Panel" parent="GridContainer/ItemSlot25" index="0" unique_id=1322090190]
+theme_override_styles/panel = SubResource("StyleBoxFlat_2i24m")
+
+[node name="ItemSlot26" parent="GridContainer" unique_id=1987521569 instance=ExtResource("1_3d1ej")]
+layout_mode = 2
+
+[node name="Panel" parent="GridContainer/ItemSlot26" index="0" unique_id=1322090190]
+theme_override_styles/panel = SubResource("StyleBoxFlat_2i24m")
+
+[node name="ItemSlot27" parent="GridContainer" unique_id=1086105673 instance=ExtResource("1_3d1ej")]
+layout_mode = 2
+
+[node name="Panel" parent="GridContainer/ItemSlot27" index="0" unique_id=1322090190]
+theme_override_styles/panel = SubResource("StyleBoxFlat_2i24m")
+
+[node name="ItemSlot28" parent="GridContainer" unique_id=1021592530 instance=ExtResource("1_3d1ej")]
+layout_mode = 2
+
+[node name="Panel" parent="GridContainer/ItemSlot28" index="0" unique_id=1322090190]
+theme_override_styles/panel = SubResource("StyleBoxFlat_2i24m")
+
+[node name="ItemSlot29" parent="GridContainer" unique_id=369470149 instance=ExtResource("1_3d1ej")]
+layout_mode = 2
+
+[node name="Panel" parent="GridContainer/ItemSlot29" index="0" unique_id=1322090190]
+theme_override_styles/panel = SubResource("StyleBoxFlat_2i24m")
+
+[node name="ItemSlot30" parent="GridContainer" unique_id=1937907036 instance=ExtResource("1_3d1ej")]
+layout_mode = 2
+
+[node name="Panel" parent="GridContainer/ItemSlot30" index="0" unique_id=1322090190]
+theme_override_styles/panel = SubResource("StyleBoxFlat_2i24m")
+
+[node name="ItemSlot31" parent="GridContainer" unique_id=1318295971 instance=ExtResource("1_3d1ej")]
+layout_mode = 2
+
+[node name="Panel" parent="GridContainer/ItemSlot31" index="0" unique_id=1322090190]
+theme_override_styles/panel = SubResource("StyleBoxFlat_2i24m")
+
+[node name="ItemSlot32" parent="GridContainer" unique_id=1534038347 instance=ExtResource("1_3d1ej")]
+layout_mode = 2
+
+[node name="Panel" parent="GridContainer/ItemSlot32" index="0" unique_id=1322090190]
+theme_override_styles/panel = SubResource("StyleBoxFlat_2i24m")
+
+[editable path="GridContainer/ItemSlot"]
+[editable path="GridContainer/ItemSlot2"]
+[editable path="GridContainer/ItemSlot3"]
+[editable path="GridContainer/ItemSlot4"]
+[editable path="GridContainer/ItemSlot5"]
+[editable path="GridContainer/ItemSlot6"]
+[editable path="GridContainer/ItemSlot7"]
+[editable path="GridContainer/ItemSlot8"]
+[editable path="GridContainer/ItemSlot9"]
+[editable path="GridContainer/ItemSlot10"]
+[editable path="GridContainer/ItemSlot11"]
+[editable path="GridContainer/ItemSlot12"]
+[editable path="GridContainer/ItemSlot13"]
+[editable path="GridContainer/ItemSlot14"]
+[editable path="GridContainer/ItemSlot15"]
+[editable path="GridContainer/ItemSlot16"]
+[editable path="GridContainer/ItemSlot17"]
+[editable path="GridContainer/ItemSlot18"]
+[editable path="GridContainer/ItemSlot19"]
+[editable path="GridContainer/ItemSlot20"]
+[editable path="GridContainer/ItemSlot21"]
+[editable path="GridContainer/ItemSlot22"]
+[editable path="GridContainer/ItemSlot23"]
+[editable path="GridContainer/ItemSlot24"]
+[editable path="GridContainer/ItemSlot25"]
+[editable path="GridContainer/ItemSlot26"]
+[editable path="GridContainer/ItemSlot27"]
+[editable path="GridContainer/ItemSlot28"]
+[editable path="GridContainer/ItemSlot29"]
+[editable path="GridContainer/ItemSlot30"]
+[editable path="GridContainer/ItemSlot31"]
+[editable path="GridContainer/ItemSlot32"]

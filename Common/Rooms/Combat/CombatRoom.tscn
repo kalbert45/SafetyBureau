@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cj4o0fk8inb0x"]
 
 [ext_resource type="Script" uid="uid://t7vmwpsnio30" path="res://Common/Rooms/Combat/combat_room.gd" id="1_pu8qm"]
-[ext_resource type="Texture2D" uid="uid://ry61agogpi88" path="res://Entities/Envs/Maps/TEST_MAP/field_background.png" id="2_gwxad"]
+[ext_resource type="Texture2D" uid="uid://bgqnjd1qcscec" path="res://Entities/Envs/Maps/TEST_MAP/office_background.png" id="2_gwxad"]
 [ext_resource type="PackedScene" uid="uid://crc4aqsb6olf8" path="res://Common/System/UI/BoardUI/board_ui.tscn" id="2_msmif"]
 
 [sub_resource type="Animation" id="Animation_gwxad"]
@@ -132,6 +132,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="TopBar" type="ColorRect" parent="Env/BlackBars" unique_id=1244767821]
+visible = false
 layout_mode = 0
 offset_top = -57.0
 offset_right = 650.3334
@@ -139,6 +140,7 @@ offset_bottom = 16.666672
 color = Color(0.043137256, 0.0627451, 0.08627451, 1)
 
 [node name="BottomBar" type="ColorRect" parent="Env/BlackBars" unique_id=2079346066]
+visible = false
 layout_mode = 0
 offset_top = 303.0
 offset_right = 650.3334

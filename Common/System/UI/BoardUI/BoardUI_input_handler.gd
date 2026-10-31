@@ -1,6 +1,7 @@
 extends Node
 
 signal arrange_heroes(exception : Hero)
+signal snap_hero(hero : Hero)
 
 var HERO_ARR : Array[Hero] = []
 
@@ -39,7 +40,7 @@ func _on_unit_mouse_exited(unit : Unit) -> void:
 	if disabled : return
 	if hero_held : return
 	if is_instance_valid(_hovered_unit):
-		if unit is Hero and not hero_held and Input.is_action_pressed("LMB"):
+		if unit is Hero and not hero_held and Input.is_action_pressed("LMB") and holding_click:
 			_hold_hero()
 	
 func _on_unit_gui_event(event : InputEvent, unit : Unit) -> void:
@@ -81,7 +82,8 @@ func _drop_hero() -> void:
 	
 	_hovered_unit.update_held_status(false)
 	
-	emit_signal("arrange_heroes", null)
+	emit_signal("arrange_heroes", _hovered_unit)
+	emit_signal("snap_hero", _hovered_unit)
 
 func _process(_delta: float) -> void:
 	if disabled : return
@@ -91,4 +93,4 @@ func _process(_delta: float) -> void:
 	var mouse_p = get_viewport().get_mouse_position()
 	mouse_p.x = clamp(mouse_p.x, 0.0, get_viewport().get_visible_rect().size.x)
 	mouse_p.y = clamp(mouse_p.y, 0.0, get_viewport().get_visible_rect().size.y)
-	_hovered_unit.global_position = mouse_p
+	_hovered_unit.global_position = mouse_p - Vector2(23.0, 23.0)

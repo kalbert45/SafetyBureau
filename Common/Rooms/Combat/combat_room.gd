@@ -1,7 +1,7 @@
 class_name CombatRoom extends Room
 
 func _ready() -> void:
-	SignalBus.begin_combat.connect(_on_begin_combat)
+	#SignalBus.begin_combat.connect(_on_begin_combat)
 	SignalBus.end_combat.connect(_on_end_combat)
 
 # initialization
@@ -16,8 +16,8 @@ func exit() -> void:
 
 #----------------------------------------
 
-func _on_begin_combat() -> void:
-	$Env/BlackBars/AnimationPlayer.play("narrow_bars")
+#func _on_begin_combat() -> void:
+	#$Env/BlackBars/AnimationPlayer.play("narrow_bars")
 	
 func _on_end_combat() -> void:
 	await get_tree().create_timer(3.0).timeout

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dofasmf4blbqo"]
+
+[ext_resource type="Texture2D" uid="uid://cjrpg0u4jhppb" path="res://Entities/Items/Tier0/BasicItem/T_BasicItem.png" id="1_0aooq"]
+[ext_resource type="Script" uid="uid://bmbkfdqogsgex" path="res://Entities/Items/ClassDef/ItemData.gd" id="2_coalt"]
+
+[resource]
+script = ExtResource("2_coalt")
+item_name = "basic item"
+item_texture = ExtResource("1_0aooq")
+metadata/_custom_type_script = "uid://bmbkfdqogsgex"

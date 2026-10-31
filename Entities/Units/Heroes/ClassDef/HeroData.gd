@@ -10,3 +10,8 @@ const HERO_SCENE_PATHS = {
 }
 
 @export var hero_enum := HERO_NAMES.JOSEPHINE
+
+@export var num_item_slots := 1
+@export var items : Array = []
+@export var level := 1
+@export var experience := 0

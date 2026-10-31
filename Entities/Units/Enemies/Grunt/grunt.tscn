@@ -5,5 +5,4 @@
 [node name="Grunt" unique_id=1767766882 instance=ExtResource("1_7e7at")]
 
 [node name="Sprite2D" parent="." index="0" unique_id=1440963874]
-modulate = Color(0.69, 0.36569998, 0.69, 1)
 flip_h = true

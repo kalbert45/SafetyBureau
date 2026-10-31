@@ -6,6 +6,13 @@ func _ready() -> void:
 	super()
 	temp_data = data.duplicate()
 	cd_component.unit_temp_data = temp_data
+	
+	%ItemSlot1.visible = true
+	%ItemSlot2.visible = data.num_item_slots >= 2
+	%ItemSlot3.visible = data.num_item_slots >= 3
+	%ItemSlot4.visible = data.num_item_slots >= 4
+	%ItemSlot5.visible = data.num_item_slots >= 5
+	%ItemSlot6.visible = data.num_item_slots >= 6
 
 #------------------------
 
