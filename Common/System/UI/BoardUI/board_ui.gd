@@ -57,10 +57,11 @@ func setup_units() -> void:
 		if unit is Hero:
 			HERO_ARR[unit.data.position_index] = unit
 			unit.position = %HeroSlotContainer.get_child(unit.data.position_index).global_position - global_position
-			
+		
 			
 		elif unit is Enemy:
 			ENEMY_ARR[unit.data.position_index] = unit
+			unit.position = %EnemySlotContainer.get_child(unit.data.position_index).global_position - global_position
 
 func initiate_combat() -> void:
 	input_handler.disabled = true

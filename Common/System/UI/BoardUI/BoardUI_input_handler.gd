@@ -56,6 +56,7 @@ func _on_unit_gui_event(event : InputEvent, unit : Unit) -> void:
 			holding_click = true
 			clicked_p = event.position
 
+
 func _input(event: InputEvent) -> void:
 	if disabled : return
 	if event.is_action_released("LMB"):

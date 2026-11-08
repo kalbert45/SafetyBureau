@@ -7,4 +7,9 @@
 script = ExtResource("2_coalt")
 item_name = "basic item"
 item_texture = ExtResource("1_0aooq")
+health = 50
+health_regen = 10
+defense = 20
+attack_speed = 200
+attack_power = 40
 metadata/_custom_type_script = "uid://bmbkfdqogsgex"

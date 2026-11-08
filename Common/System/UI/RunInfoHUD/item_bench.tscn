@@ -22,10 +22,8 @@ border_color = Color(0.16862746, 0.19215687, 0.2509804, 1)
 [node name="ItemBench" type="Control" unique_id=1002776891]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 8.0
-offset_top = 267.0
-offset_right = 48.0
-offset_bottom = 307.0
+offset_right = 40.0
+offset_bottom = 40.0
 mouse_filter = 2
 
 [node name="Panel" type="Panel" parent="." unique_id=1738638306]

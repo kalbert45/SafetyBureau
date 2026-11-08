@@ -21,8 +21,8 @@ func handle_combat() -> void:
 	# connect signals
 	for unit : Unit in HERO_ARR + ENEMY_ARR:
 		unit.death.connect(_on_unit_death.bind(unit))
-		unit.damage_hero.connect(_on_damage_hero)
-		unit.damage_enemy.connect(_on_damage_enemy)
+		unit.damage_hero.connect(_on_damage_hero.bind(unit))
+		unit.damage_enemy.connect(_on_damage_enemy.bind(unit))
 		
 		unit.start_combat()
 
@@ -52,11 +52,11 @@ func end_combat() -> void:
 
 #-----------------------
 
-func _on_damage_hero(dmg : DamageSource, target_index : int) -> void:
+func _on_damage_hero(dmg : DamageSource, target_index : int, source_unit : Unit) -> void:
 	if HERO_ARR.get(target_index):
 		HERO_ARR.get(target_index).take_damage(dmg)
 	
-func _on_damage_enemy(dmg : DamageSource, target_index : int) -> void:
+func _on_damage_enemy(dmg : DamageSource, target_index : int, source_unit : Unit) -> void:
 	if ENEMY_ARR.get(target_index):
 		ENEMY_ARR.get(target_index).take_damage(dmg)
 

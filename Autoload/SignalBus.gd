@@ -9,3 +9,5 @@ signal end_combat
 #------------ UI -----------------
 signal item_slot_hovered(slot : ItemSlot, on : bool)
 signal item_slot_gui_input(slot : ItemSlot, event : InputEvent)
+
+signal show_unit_display(unit : Unit)

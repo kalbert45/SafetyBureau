@@ -5,4 +5,7 @@
 [resource]
 script = ExtResource("1_q6lud")
 hero_enum = 1
+unit_name = "Sig"
+attack_speed = 100
+attack_power = 30
 metadata/_custom_type_script = "uid://b1kvhgao5jabx"

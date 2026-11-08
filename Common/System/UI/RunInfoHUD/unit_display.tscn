@@ -1,24 +1,443 @@
 [gd_scene format=3 uid="uid://dkc8wkxwvy6ou"]
 
+[ext_resource type="Script" uid="uid://iaupnhwq7qrg" path="res://Common/System/UI/RunInfoHUD/unit_display.gd" id="1_0f2qy"]
+[ext_resource type="PackedScene" uid="uid://dllei5jocgd3r" path="res://Common/System/UI/ItemSystem/ClassDef/ItemSlot.tscn" id="1_r3t78"]
+[ext_resource type="FontFile" uid="uid://bud0x0oik1jco" path="res://Assets/Fonts/04B_03__.TTF" id="2_6f2nl"]
+[ext_resource type="Texture2D" uid="uid://cghc57qws3he7" path="res://Common/System/UI/RunInfoHUD/defense_icon.png" id="4_1wsni"]
+[ext_resource type="Texture2D" uid="uid://ccmg6sswflecw" path="res://Common/System/UI/RunInfoHUD/shield_icon.png" id="4_apxb4"]
+[ext_resource type="Texture2D" uid="uid://dc12bdts1qsci" path="res://Common/System/UI/RunInfoHUD/attack_icon.png" id="6_7re2q"]
+[ext_resource type="Texture2D" uid="uid://dc16wkpn6of4h" path="res://Common/System/UI/RunInfoHUD/health_regen_icon.png" id="6_hw3ux"]
+[ext_resource type="Texture2D" uid="uid://3y5h4ukx78hn" path="res://Common/System/UI/RunInfoHUD/skill_power_icon.png" id="7_sgiav"]
+[ext_resource type="Texture2D" uid="uid://rskq8abgttja" path="res://Common/System/UI/RunInfoHUD/attack_speed_icon.png" id="8_nftd4"]
+[ext_resource type="Texture2D" uid="uid://ccqwmxoon6slf" path="res://Common/System/UI/RunInfoHUD/ability_haste_icon.png" id="9_1qert"]
+[ext_resource type="Texture2D" uid="uid://q1sofxbdggqk" path="res://Common/System/UI/RunInfoHUD/crit_icon.png" id="11_vc36y"]
+[ext_resource type="Texture2D" uid="uid://lkt2samvq066" path="res://Common/System/UI/RunInfoHUD/omnivamp_icon.png" id="12_ccojg"]
+[ext_resource type="Texture2D" uid="uid://t67s50daodyv" path="res://Common/System/UI/RunInfoHUD/attack_range_icon.png" id="13_ht88y"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r2hnv"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+bg_color = Color(0.12156863, 0.12156863, 0.16078432, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.34901962, 0.34901962, 0.34901962, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6f2nl"]
+bg_color = Color(0.16862746, 0.19215687, 0.2509804, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1wsni"]
+bg_color = Color(0.49019608, 0.4392157, 0.44313726, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0f2qy"]
+bg_color = Color(0.16862746, 0.19215687, 0.2509804, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_apxb4"]
+bg_color = Color(0.3529412, 0.3254902, 0.3254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ileh0"]
+bg_color = Color(0.12156863, 0.12156863, 0.16078432, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.52156866, 0.5764706, 0.6, 1)
+
 [node name="UnitDisplay" type="Control" unique_id=189300174]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 214.0
-offset_top = 266.0
-offset_right = 254.0
-offset_bottom = 306.0
+offset_right = 40.0
+offset_bottom = 40.0
 mouse_filter = 2
+script = ExtResource("1_0f2qy")
 
 [node name="Panel" type="Panel" parent="." unique_id=910021492]
 layout_mode = 0
 offset_right = 188.0
 offset_bottom = 87.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_r2hnv")
+
+[node name="InfoElements" type="Control" parent="." unique_id=1241360201]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ProfilePanel" type="Panel" parent="InfoElements" unique_id=1569069497]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 4.0
+offset_right = 42.0
+offset_bottom = 41.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_r2hnv")
+
+[node name="TextureRect" type="TextureRect" parent="InfoElements/ProfilePanel" unique_id=835258716]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 36.0
+offset_bottom = 36.0
+
+[node name="ItemGrid" type="GridContainer" parent="InfoElements" unique_id=1893206875]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 45.0
+offset_right = 25.0
+offset_bottom = 65.0
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 2
+
+[node name="ItemSlot" parent="InfoElements/ItemGrid" unique_id=1730077785 instance=ExtResource("1_r3t78")]
+layout_mode = 2
+read_only = true
+
+[node name="ItemSlot2" parent="InfoElements/ItemGrid" unique_id=1555372545 instance=ExtResource("1_r3t78")]
+layout_mode = 2
+read_only = true
+
+[node name="ItemSlot3" parent="InfoElements/ItemGrid" unique_id=909994286 instance=ExtResource("1_r3t78")]
+layout_mode = 2
+read_only = true
+
+[node name="ItemSlot4" parent="InfoElements/ItemGrid" unique_id=1742039749 instance=ExtResource("1_r3t78")]
+layout_mode = 2
+read_only = true
+
+[node name="NameLabel" type="RichTextLabel" parent="InfoElements" unique_id=61731663]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 5.0
+offset_right = 166.0
+offset_bottom = 45.0
+theme_override_fonts/normal_font = ExtResource("2_6f2nl")
+theme_override_font_sizes/normal_font_size = 8
+text = "Josephine"
+
+[node name="LevelLabel" type="RichTextLabel" parent="InfoElements" unique_id=2006557920]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 121.0
+offset_bottom = 45.0
+theme_override_colors/default_color = Color(0.7411765, 0.70980394, 0.65882355, 1)
+theme_override_fonts/normal_font = ExtResource("2_6f2nl")
+theme_override_font_sizes/normal_font_size = 8
+text = "Lvl 2"
+horizontal_alignment = 2
+
+[node name="HealthBar" type="ProgressBar" parent="InfoElements" unique_id=1447924766]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 16.0
+offset_right = 120.0
+offset_bottom = 23.0
+theme_override_styles/background = SubResource("StyleBoxFlat_6f2nl")
+theme_override_styles/fill = SubResource("StyleBoxFlat_1wsni")
+value = 50.0
+show_percentage = false
+
+[node name="HealthLabel" type="RichTextLabel" parent="InfoElements/HealthBar" unique_id=395350951]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 68.0
+offset_bottom = 8.0
+theme_override_colors/default_color = Color(1, 0.9490196, 0.9019608, 1)
+theme_override_fonts/normal_font = ExtResource("2_6f2nl")
+theme_override_font_sizes/normal_font_size = 8
+text = "100 / 100"
+horizontal_alignment = 2
+
+[node name="HealthLabel2" type="RichTextLabel" parent="InfoElements/HealthBar" unique_id=459897850]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 70.0
+offset_bottom = 8.0
+theme_override_colors/default_color = Color(0.12156863, 0.12156863, 0.16078432, 1)
+theme_override_fonts/normal_font = ExtResource("2_6f2nl")
+theme_override_font_sizes/normal_font_size = 8
+text = "HP"
+
+[node name="ExpBar" type="ProgressBar" parent="InfoElements" unique_id=1380456884]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 27.0
+offset_right = 120.0
+offset_bottom = 34.0
+theme_override_styles/background = SubResource("StyleBoxFlat_0f2qy")
+theme_override_styles/fill = SubResource("StyleBoxFlat_apxb4")
+value = 30.0
+show_percentage = false
+
+[node name="ExpLabel" type="RichTextLabel" parent="InfoElements/ExpBar" unique_id=327103637]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 68.0
+offset_bottom = 8.0
+theme_override_colors/default_color = Color(0.7411765, 0.70980394, 0.65882355, 1)
+theme_override_fonts/normal_font = ExtResource("2_6f2nl")
+theme_override_font_sizes/normal_font_size = 8
+text = "28 / 100"
+horizontal_alignment = 2
+
+[node name="HealthLabel2" type="RichTextLabel" parent="InfoElements/ExpBar" unique_id=1573275919]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 70.0
+offset_bottom = 8.0
+theme_override_colors/default_color = Color(0.12156863, 0.12156863, 0.16078432, 1)
+theme_override_fonts/normal_font = ExtResource("2_6f2nl")
+theme_override_font_sizes/normal_font_size = 8
+text = "EXP"
+
+[node name="ShieldContainer" type="HBoxContainer" parent="InfoElements" unique_id=653093422]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 16.0
+offset_right = 151.0
+offset_bottom = 33.0
+theme_override_constants/separation = 1
+
+[node name="TextureRect" type="TextureRect" parent="InfoElements/ShieldContainer" unique_id=1524497122]
+layout_mode = 2
+texture = ExtResource("4_apxb4")
+stretch_mode = 2
+
+[node name="HealthLabel2" type="RichTextLabel" parent="InfoElements/ShieldContainer" unique_id=39285414]
+custom_minimum_size = Vector2(18, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0.52156866, 0.5764706, 0.6, 1)
+theme_override_fonts/normal_font = ExtResource("2_6f2nl")
+theme_override_font_sizes/normal_font_size = 8
+text = "100"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="StatsContainer" type="GridContainer" parent="InfoElements" unique_id=146166316]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 42.0
+offset_right = 141.0
+offset_bottom = 86.0
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 5
+columns = 5
+
+[node name="DefenseContainer" type="VBoxContainer" parent="InfoElements/StatsContainer" unique_id=741672449]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="TextureRect" type="TextureRect" parent="InfoElements/StatsContainer/DefenseContainer" unique_id=2116999558]
+layout_mode = 2
+texture = ExtResource("4_1wsni")
+stretch_mode = 3
+
+[node name="DefenseLabel" type="RichTextLabel" parent="InfoElements/StatsContainer/DefenseContainer" unique_id=1415684878]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(18, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0.9490196, 0.9019608, 1)
+theme_override_fonts/normal_font = ExtResource("2_6f2nl")
+theme_override_font_sizes/normal_font_size = 8
+text = "100"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="HealthRegenContainer" type="VBoxContainer" parent="InfoElements/StatsContainer" unique_id=169678458]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="TextureRect" type="TextureRect" parent="InfoElements/StatsContainer/HealthRegenContainer" unique_id=1200414697]
+layout_mode = 2
+texture = ExtResource("6_hw3ux")
+stretch_mode = 3
+
+[node name="HealthRegenLabel" type="RichTextLabel" parent="InfoElements/StatsContainer/HealthRegenContainer" unique_id=357819764]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(18, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0.9490196, 0.9019608, 1)
+theme_override_fonts/normal_font = ExtResource("2_6f2nl")
+theme_override_font_sizes/normal_font_size = 8
+text = "100"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="AttackContainer" type="VBoxContainer" parent="InfoElements/StatsContainer" unique_id=98492931]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="TextureRect" type="TextureRect" parent="InfoElements/StatsContainer/AttackContainer" unique_id=1389605911]
+layout_mode = 2
+texture = ExtResource("6_7re2q")
+stretch_mode = 3
+
+[node name="AttackLabel" type="RichTextLabel" parent="InfoElements/StatsContainer/AttackContainer" unique_id=418284722]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(18, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0.9490196, 0.9019608, 1)
+theme_override_fonts/normal_font = ExtResource("2_6f2nl")
+theme_override_font_sizes/normal_font_size = 8
+text = "100"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="SkillPowerContainer" type="VBoxContainer" parent="InfoElements/StatsContainer" unique_id=1828723364]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="TextureRect" type="TextureRect" parent="InfoElements/StatsContainer/SkillPowerContainer" unique_id=1519434525]
+layout_mode = 2
+texture = ExtResource("7_sgiav")
+stretch_mode = 3
+
+[node name="SkillPowerLabel" type="RichTextLabel" parent="InfoElements/StatsContainer/SkillPowerContainer" unique_id=1727567599]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(18, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0.9490196, 0.9019608, 1)
+theme_override_fonts/normal_font = ExtResource("2_6f2nl")
+theme_override_font_sizes/normal_font_size = 8
+text = "100"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="AttackSpeedContainer" type="VBoxContainer" parent="InfoElements/StatsContainer" unique_id=583793589]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="TextureRect" type="TextureRect" parent="InfoElements/StatsContainer/AttackSpeedContainer" unique_id=39268999]
+layout_mode = 2
+texture = ExtResource("8_nftd4")
+stretch_mode = 3
+
+[node name="AttackSpeedLabel" type="RichTextLabel" parent="InfoElements/StatsContainer/AttackSpeedContainer" unique_id=574089286]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(18, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0.9490196, 0.9019608, 1)
+theme_override_fonts/normal_font = ExtResource("2_6f2nl")
+theme_override_font_sizes/normal_font_size = 8
+text = "100"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="SkillHasteContainer" type="VBoxContainer" parent="InfoElements/StatsContainer" unique_id=227723059]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="TextureRect" type="TextureRect" parent="InfoElements/StatsContainer/SkillHasteContainer" unique_id=1287221700]
+layout_mode = 2
+texture = ExtResource("9_1qert")
+stretch_mode = 3
+
+[node name="SkillHasteLabel" type="RichTextLabel" parent="InfoElements/StatsContainer/SkillHasteContainer" unique_id=570775844]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(18, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0.9490196, 0.9019608, 1)
+theme_override_fonts/normal_font = ExtResource("2_6f2nl")
+theme_override_font_sizes/normal_font_size = 8
+text = "100"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="CritContainer" type="VBoxContainer" parent="InfoElements/StatsContainer" unique_id=66976407]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="TextureRect" type="TextureRect" parent="InfoElements/StatsContainer/CritContainer" unique_id=1477914467]
+layout_mode = 2
+texture = ExtResource("11_vc36y")
+stretch_mode = 3
+
+[node name="CritLabel" type="RichTextLabel" parent="InfoElements/StatsContainer/CritContainer" unique_id=1230633353]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(18, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0.9490196, 0.9019608, 1)
+theme_override_fonts/normal_font = ExtResource("2_6f2nl")
+theme_override_font_sizes/normal_font_size = 8
+text = "100"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="OmnivampContainer" type="VBoxContainer" parent="InfoElements/StatsContainer" unique_id=1065772950]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="TextureRect" type="TextureRect" parent="InfoElements/StatsContainer/OmnivampContainer" unique_id=1312669626]
+layout_mode = 2
+texture = ExtResource("12_ccojg")
+stretch_mode = 3
+
+[node name="OmnivampLabel" type="RichTextLabel" parent="InfoElements/StatsContainer/OmnivampContainer" unique_id=842984177]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(18, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0.9490196, 0.9019608, 1)
+theme_override_fonts/normal_font = ExtResource("2_6f2nl")
+theme_override_font_sizes/normal_font_size = 8
+text = "100"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="AttackRangeContainer" type="VBoxContainer" parent="InfoElements/StatsContainer" unique_id=924086378]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="TextureRect" type="TextureRect" parent="InfoElements/StatsContainer/AttackRangeContainer" unique_id=698155517]
+layout_mode = 2
+texture = ExtResource("13_ht88y")
+stretch_mode = 3
+
+[node name="AttackRangeLabel" type="RichTextLabel" parent="InfoElements/StatsContainer/AttackRangeContainer" unique_id=923929860]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(18, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0.9490196, 0.9019608, 1)
+theme_override_fonts/normal_font = ExtResource("2_6f2nl")
+theme_override_font_sizes/normal_font_size = 8
+text = "5"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="SkillContainer" type="VBoxContainer" parent="InfoElements" unique_id=603158934]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 3.0
+offset_right = 196.0
+offset_bottom = 85.0
+theme_override_constants/separation = 3
+
+[node name="Panel" type="Panel" parent="InfoElements/SkillContainer" unique_id=1886570762]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ileh0")
+
+[node name="Panel2" type="Panel" parent="InfoElements/SkillContainer" unique_id=1908275139]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ileh0")
+
+[node name="Panel3" type="Panel" parent="InfoElements/SkillContainer" unique_id=1073523690]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ileh0")
+
+[node name="Panel4" type="Panel" parent="InfoElements/SkillContainer" unique_id=1261555914]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ileh0")

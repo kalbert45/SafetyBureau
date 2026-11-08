@@ -3,15 +3,27 @@
 [ext_resource type="Script" uid="uid://cyqlct6gu7ysc" path="res://Entities/Units/ClassDef/CDcomponent.gd" id="1_owcce"]
 [ext_resource type="Script" uid="uid://dpgfi7jt1hreu" path="res://Entities/Units/ClassDef/CooldownTimer.gd" id="2_wqi87"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_owcce"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wqi87"]
-bg_color = Color(0.8810568, 0.4830795, 0, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yt8ro"]
+bg_color = Color(0.34901962, 0.34901962, 0.34901962, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kx4li"]
-bg_color = Color(0.3048962, 0.62676257, 0.88899094, 1)
+bg_color = Color(0.52156866, 0.5764706, 0.6, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r2hnv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.16862746, 0.19215687, 0.2509804, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wqi87"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.34901962, 0.34901962, 0.34901962, 1)
 
 [node name="CDComponent" type="Control" unique_id=613800876]
 layout_mode = 3
@@ -24,26 +36,16 @@ mouse_filter = 2
 script = ExtResource("1_owcce")
 
 [node name="AttackCDTimer" type="Timer" parent="." unique_id=971893460]
+one_shot = true
 script = ExtResource("2_wqi87")
 metadata/_custom_type_script = "uid://dpgfi7jt1hreu"
 
 [node name="AbilityCDTimer" type="Timer" parent="." unique_id=1669084640]
+one_shot = true
 script = ExtResource("2_wqi87")
 metadata/_custom_type_script = "uid://dpgfi7jt1hreu"
 
-[node name="AttackCDProgress" type="ProgressBar" parent="." unique_id=1486459391]
-visible = false
-layout_mode = 0
-offset_right = 44.0
-offset_bottom = 5.0
-mouse_filter = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_owcce")
-theme_override_styles/fill = SubResource("StyleBoxFlat_wqi87")
-value = 40.0
-show_percentage = false
-
 [node name="AbilityCDProgress" type="ProgressBar" parent="." unique_id=1931297841]
-visible = false
 layout_mode = 0
 offset_right = 44.0
 offset_bottom = 5.0
@@ -52,6 +54,20 @@ theme_override_styles/background = SubResource("StyleBoxFlat_yt8ro")
 theme_override_styles/fill = SubResource("StyleBoxFlat_kx4li")
 value = 50.0
 show_percentage = false
+
+[node name="Over" type="Panel" parent="AbilityCDProgress" unique_id=1990977157]
+layout_mode = 0
+offset_right = 44.0
+offset_bottom = 5.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_r2hnv")
+
+[node name="Over2" type="Panel" parent="AbilityCDProgress" unique_id=794933939]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 45.0
+offset_bottom = 6.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wqi87")
 
 [connection signal="timeout" from="AttackCDTimer" to="." method="_on_attack_cd_timer_timeout"]
 [connection signal="timeout" from="AbilityCDTimer" to="." method="_on_ability_cd_timer_timeout"]

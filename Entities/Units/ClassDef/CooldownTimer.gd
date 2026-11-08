@@ -15,8 +15,11 @@ func clear_carry_over() -> void:
 # resets wait time to cooldown each time. 
 func start_timer(time = cooldown, refresh : bool = true) -> void:
 	#_timeout_lock = false
-	if refresh: start(time)
-	else: start(time - _carry_over)
+	if refresh:
+		start(time)
+	else:
+		_carry_over = clamp(_carry_over, 0.0, cooldown - 0.1)
+		start(time - _carry_over)
 	_carry_over = 0.0
 
 #func stop_timer() -> void:
@@ -24,6 +27,8 @@ func start_timer(time = cooldown, refresh : bool = true) -> void:
 	#stop()
 
 func subtract_cooldown(x : float):
+	if is_stopped():
+		_carry_over += x
 	if x >= time_left:
 		_carry_over = x - time_left
 		stop()

@@ -1,5 +1,7 @@
 class_name ItemSlot extends Control
 
+signal item_set
+
 @export var read_only := false
 
 var disabled := false
@@ -17,6 +19,7 @@ func set_item(data : ItemData) -> void:
 		item_tex.texture = data.item_texture
 	else:
 		item_tex.texture = null
+	emit_signal("item_set")
 
 func pop_item() -> ItemData:
 	var data = current_item_data

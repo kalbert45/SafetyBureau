@@ -11,10 +11,8 @@ border_color = Color(0.34901962, 0.34901962, 0.34901962, 1)
 [node name="DamageChart" type="Control" unique_id=893641467]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 441.0
-offset_top = 267.0
-offset_right = 481.0
-offset_bottom = 307.0
+offset_right = 40.0
+offset_bottom = 40.0
 mouse_filter = 2
 
 [node name="Panel" type="Panel" parent="." unique_id=1275233379]

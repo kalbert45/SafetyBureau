@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UnitSkillData" format=3 uid="uid://dqlkyne8h36nv"]
+
+[ext_resource type="Script" uid="uid://bhsih8iry63p7" path="res://Entities/Units/ClassDef/UnitSkillData.gd" id="1_pl3xh"]
+
+[resource]
+script = ExtResource("1_pl3xh")
+skill_name_dict = Dictionary[int, String]({
+1: ""
+})
+skill_type_dict = Dictionary[int, int]({
+1: 1
+})
+metadata/_custom_type_script = "uid://bhsih8iry63p7"

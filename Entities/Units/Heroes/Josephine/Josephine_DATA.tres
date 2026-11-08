@@ -1,7 +1,13 @@
 [gd_resource type="Resource" script_class="HeroData" format=3 uid="uid://b1afu1brrcm27"]
 
 [ext_resource type="Script" uid="uid://b1kvhgao5jabx" path="res://Entities/Units/Heroes/ClassDef/HeroData.gd" id="1_wp2ri"]
+[ext_resource type="Texture2D" uid="uid://1ol2uvg3g8vg" path="res://Entities/Units/Heroes/Josephine/T_Profile_Josephine.png" id="2_n8ano"]
 
 [resource]
 script = ExtResource("1_wp2ri")
+unit_name = "Josephine"
+unit_profile_tex = ExtResource("2_n8ano")
+attack_power = 50
+ability_power = 20
+ability_haste = 50
 metadata/_custom_type_script = "uid://b1kvhgao5jabx"

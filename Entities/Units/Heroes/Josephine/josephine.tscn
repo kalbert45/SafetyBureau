@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cma0jgvt1mhp3" path="res://Entities/Units/Heroes/ClassDef/hero.tscn" id="1_w1pnf"]
 [ext_resource type="Texture2D" uid="uid://cjaebc8ceedwv" path="res://Entities/Units/ClassDef/concept_unit_tex2.png" id="2_rkgcj"]
 [ext_resource type="Shader" uid="uid://dfe1gue4fr4re" path="res://Assets/Shaders/pixel_outline.gdshader" id="2_t8wcv"]
+[ext_resource type="Script" uid="uid://yvigrvoyerf7" path="res://Entities/Units/Heroes/Josephine/josephine.gd" id="2_wljxx"]
 
 [sub_resource type="Animation" id="Animation_myuce"]
 length = 0.001
@@ -123,23 +124,6 @@ tracks/0/keys = {
 "values": [2, 3]
 }
 
-[sub_resource type="Animation" id="Animation_vmux5"]
-resource_name = "stagger"
-length = 0.40002000596076254
-step = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [6]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_myuce"]
 _data = {
 &"RESET": SubResource("Animation_myuce"),
@@ -148,8 +132,7 @@ _data = {
 &"death": SubResource("Animation_t8wcv"),
 &"idle": SubResource("Animation_wljxx"),
 &"level_up": SubResource("Animation_b5y2c"),
-&"run": SubResource("Animation_flq0x"),
-&"stagger": SubResource("Animation_vmux5")
+&"run": SubResource("Animation_flq0x")
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wljxx"]
@@ -161,6 +144,8 @@ shader_parameter/type = 1
 shader_parameter/thickness = 1.0
 
 [node name="Josephine" unique_id=1767766882 instance=ExtResource("1_w1pnf")]
+script = ExtResource("2_wljxx")
+data = null
 
 [node name="Sprite2D" parent="." index="0" unique_id=1440963874]
 visible = false
@@ -182,14 +167,6 @@ material = SubResource("ShaderMaterial_wljxx")
 position = Vector2(29, 41)
 texture = ExtResource("2_rkgcj")
 
-[node name="HealthLabel" parent="." index="5" unique_id=152163360]
+[node name="LevelLabel" parent="." index="5" unique_id=152163360]
 offset_left = 4.0
 offset_right = 44.0
-
-[node name="Panel" parent="." index="6" unique_id=1541589263]
-offset_left = 3.0
-offset_right = 20.0
-
-[node name="Panel2" parent="." index="7" unique_id=6418684]
-offset_left = 24.0
-offset_right = 41.0

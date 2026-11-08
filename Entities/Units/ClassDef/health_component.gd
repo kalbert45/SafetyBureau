@@ -12,8 +12,11 @@ var shield := 0 :
 func set_health(value : int) -> void:
 	health = value
 	$HealthLabel.text = str(health)
-	$ShieldLabel.text = "[" + str(1000) + "]"
+	
 
 # affects label
 func set_shield(value : int) -> void:
 	shield = value
+	$ShieldLabel.text = str(shield)
+	$ShieldLabel.visible = value > 0
+		

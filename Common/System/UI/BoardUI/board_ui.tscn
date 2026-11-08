@@ -6,11 +6,6 @@
 [ext_resource type="Script" uid="uid://cse4u1fkycmmy" path="res://Common/System/UI/BoardUI/combat_handler.gd" id="2_bt4s4"]
 [ext_resource type="FontFile" uid="uid://dxrfvq88nleri" path="res://Assets/Fonts/Fabled_Font.ttf" id="7_cm8ut"]
 [ext_resource type="PackedScene" uid="uid://b4wydxv4jdtwm" path="res://Entities/Units/Enemies/Grunt/grunt.tscn" id="7_iwro4"]
-[ext_resource type="Script" uid="uid://cek0f1huu54rg" path="res://Entities/Units/Enemies/ClassDef/EnemyData.gd" id="8_cm8ut"]
-
-[sub_resource type="Resource" id="Resource_7e7at"]
-script = ExtResource("8_cm8ut")
-metadata/_custom_type_script = "uid://cek0f1huu54rg"
 
 [node name="BoardUI" type="Control" unique_id=1596163736]
 layout_mode = 3
@@ -31,10 +26,10 @@ script = ExtResource("2_7vp5p")
 [node name="HeroSlotContainer" type="HBoxContainer" parent="." unique_id=243256374]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 23.0
+offset_left = 18.0
 offset_top = 120.0
-offset_right = 311.0
-offset_bottom = 184.0
+offset_right = 306.0
+offset_bottom = 210.0
 mouse_filter = 2
 theme_override_constants/separation = 12
 
@@ -67,10 +62,10 @@ mouse_filter = 2
 [node name="EnemySlotContainer" type="HBoxContainer" parent="." unique_id=1918617286]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 341.0
+offset_left = 336.0
 offset_top = 120.0
-offset_right = 629.0
-offset_bottom = 184.0
+offset_right = 624.0
+offset_bottom = 210.0
 mouse_filter = 2
 theme_override_constants/separation = 12
 
@@ -100,14 +95,12 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 
-[node name="Grunt" parent="EnemyContainer" unique_id=833600198 instance=ExtResource("7_iwro4")]
-custom_minimum_size = Vector2(0, 0)
+[node name="Grunt" parent="EnemyContainer" unique_id=1767766882 instance=ExtResource("7_iwro4")]
 layout_mode = 1
-offset_left = 340.0
-offset_top = 163.0
-offset_right = 340.0
-offset_bottom = 163.0
-data = SubResource("Resource_7e7at")
+offset_left = 89.0
+offset_top = 4.0
+offset_right = 95.0
+offset_bottom = 56.0
 
 [node name="StartCombatButton" type="Button" parent="." unique_id=1568056007]
 z_index = 1

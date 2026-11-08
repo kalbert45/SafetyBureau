@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bsfuifjh657hn"]
+
+[ext_resource type="Script" uid="uid://c1kso0msmbyto" path="res://Entities/Items/ClassDef/item.gd" id="1_xmb50"]
+
+[node name="Item" type="Node" unique_id=1888606782]
+script = ExtResource("1_xmb50")

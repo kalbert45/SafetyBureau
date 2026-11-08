@@ -30,17 +30,13 @@ resource_name = "idle"
 [sub_resource type="Animation" id="Animation_sknrj"]
 resource_name = "run"
 
-[sub_resource type="Animation" id="Animation_xpd2v"]
-resource_name = "stagger"
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gaqmn"]
 _data = {
 &"ability": SubResource("Animation_0kglu"),
 &"attack": SubResource("Animation_wve3x"),
 &"death": SubResource("Animation_frdbc"),
 &"idle": SubResource("Animation_7moh5"),
-&"run": SubResource("Animation_sknrj"),
-&"stagger": SubResource("Animation_xpd2v")
+&"run": SubResource("Animation_sknrj")
 }
 
 [node name="Unit" type="Control" unique_id=1767766882 groups=["Units"]]
@@ -71,3 +67,7 @@ offset_right = -46.0
 
 [node name="CDComponent" parent="." unique_id=613800876 instance=ExtResource("4_wve3x")]
 layout_mode = 1
+offset_top = -11.0
+offset_bottom = -11.0
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

@@ -4,8 +4,10 @@ class_name Enemy extends Unit
 
 func _ready() -> void:
 	super()
-	temp_data = data.duplicate()
+	temp_data = data.replicate()
 	cd_component.unit_temp_data = temp_data
+
+	initialize()
 
 #-----------------------------
 
@@ -14,17 +16,13 @@ func start_combat() -> void:
 	
 func stop_combat() -> void:
 	cd_component.stop()
-
-func use_attack() -> void:
-	animation_player.play("attack")
 	
 func process_attack() -> void:
 	var dmg = DamageSource.new()
-	dmg.amount = 15
+	dmg.amount = temp_data.attack_power
 	emit_signal("damage_hero", dmg, 0)
-	
-func use_ability() -> void:
-	animation_player.play("ability")
 
 func process_ability() -> void:
-	pass
+	var dmg = DamageSource.new()
+	dmg.amount = temp_data.ability_power
+	emit_signal("damage_hero", dmg, 0)

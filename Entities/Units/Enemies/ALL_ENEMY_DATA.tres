@@ -6,4 +6,5 @@
 script = ExtResource("1_mavvx")
 base_folder = "res://Entities/Units/Enemies"
 includes = Array[String](["*/*.tres"])
+paths = Array[String](["res://Entities/Units/Enemies/Grunt/Grunt_DATA.tres"])
 metadata/_custom_type_script = "uid://dcd4akylkhlsc"

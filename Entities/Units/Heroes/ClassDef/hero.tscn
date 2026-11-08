@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bsx07jr5ix1km" path="res://Entities/Units/ClassDef/Unit.tscn" id="1_be2im"]
 [ext_resource type="Script" uid="uid://0838nvrrrsjl" path="res://Entities/Units/Heroes/ClassDef/hero.gd" id="2_qsbk4"]
+[ext_resource type="Script" uid="uid://bmbkfdqogsgex" path="res://Entities/Items/ClassDef/ItemData.gd" id="3_3qpif"]
 [ext_resource type="Script" uid="uid://b1kvhgao5jabx" path="res://Entities/Units/Heroes/ClassDef/HeroData.gd" id="3_k8pc2"]
 [ext_resource type="Texture2D" uid="uid://b2hlxny8w3oos" path="res://Entities/Units/ClassDef/filler_unit-spritesheet.png" id="4_tlsav"]
 [ext_resource type="Shader" uid="uid://xgr5ipgh8ojf" path="res://Assets/Shaders/remove_alpha.gdshader" id="5_ff8d8"]
@@ -29,7 +30,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_tlsav"]
 resource_name = "ability"
-length = 0.20001000298038127
+length = 0.6
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -50,17 +51,23 @@ tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.2),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.2, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
 "args": [],
 "method": &"process_ability"
+}, {
+"args": [],
+"method": &"end_ability_early"
+}, {
+"args": [],
+"method": &"end_ability"
 }]
 }
 
 [sub_resource type="Animation" id="Animation_mxyms"]
 resource_name = "attack"
-length = 0.20001000298038127
+length = 0.4000100059606135
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -81,11 +88,14 @@ tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.2),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
 "method": &"process_attack"
+}, {
+"args": [],
+"method": &"end_attack"
 }]
 }
 
@@ -157,22 +167,6 @@ tracks/0/keys = {
 "values": [2, 3]
 }
 
-[sub_resource type="Animation" id="Animation_x8u5d"]
-resource_name = "stagger"
-step = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [6]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_68grf"]
 _data = {
 &"RESET": SubResource("Animation_68grf"),
@@ -181,8 +175,7 @@ _data = {
 &"death": SubResource("Animation_ff8d8"),
 &"idle": SubResource("Animation_ws5lw"),
 &"level_up": SubResource("Animation_3qpif"),
-&"run": SubResource("Animation_2utug"),
-&"stagger": SubResource("Animation_x8u5d")
+&"run": SubResource("Animation_2utug")
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mxyms"]
