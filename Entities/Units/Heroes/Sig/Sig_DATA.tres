@@ -1,11 +1,14 @@
 [gd_resource type="Resource" script_class="HeroData" format=3 uid="uid://dd2bqmed7sdcv"]
 
+[ext_resource type="Script" uid="uid://bmbkfdqogsgex" path="res://Entities/Items/ClassDef/ItemData.gd" id="1_mwxs1"]
 [ext_resource type="Script" uid="uid://b1kvhgao5jabx" path="res://Entities/Units/Heroes/ClassDef/HeroData.gd" id="1_q6lud"]
+[ext_resource type="Resource" uid="uid://dqlkyne8h36nv" path="res://Entities/Units/Heroes/Josephine/Josephine_SKILLS.tres" id="3_xu6mc"]
 
 [resource]
 script = ExtResource("1_q6lud")
 hero_enum = 1
 unit_name = "Sig"
+skill_data = ExtResource("3_xu6mc")
 attack_speed = 100
 attack_power = 30
 metadata/_custom_type_script = "uid://b1kvhgao5jabx"

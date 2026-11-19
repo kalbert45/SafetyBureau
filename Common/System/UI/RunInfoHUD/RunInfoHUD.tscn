@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dsli5jsvbygh5" path="res://Common/System/UI/RunInfoHUD/item_bench.tscn" id="3_5anfe"]
 [ext_resource type="PackedScene" uid="uid://dkc8wkxwvy6ou" path="res://Common/System/UI/RunInfoHUD/unit_display.tscn" id="4_2i24m"]
 [ext_resource type="PackedScene" uid="uid://d14ppe2apulf2" path="res://Common/System/UI/RunInfoHUD/damage_chart.tscn" id="5_ipyba"]
+[ext_resource type="Texture2D" uid="uid://b308qpfmmxsu8" path="res://Common/System/UI/RunInfoHUD/money_icon.png" id="6_563ww"]
 
 [node name="RunInfoHud" type="Control" unique_id=1316618943]
 layout_mode = 3
@@ -41,7 +42,16 @@ offset_bottom = 48.0
 theme_override_colors/default_color = Color(1, 0.9490196, 0.9019608, 1)
 theme_override_fonts/normal_font = ExtResource("1_t0ky4")
 theme_override_font_sizes/normal_font_size = 10
-text = "1000 Coins"
+text = "1000"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=571462127]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 5.0
+offset_right = 81.0
+offset_bottom = 45.0
+texture = ExtResource("6_563ww")
+stretch_mode = 2
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1543671964]
 layout_mode = 0
@@ -52,7 +62,7 @@ offset_bottom = 48.0
 theme_override_colors/default_color = Color(1, 0.9490196, 0.9019608, 1)
 theme_override_fonts/normal_font = ExtResource("1_t0ky4")
 theme_override_font_sizes/normal_font_size = 10
-text = "Floor 8"
+text = "FLOOR 8"
 
 [node name="BottomRect2" type="ColorRect" parent="." unique_id=1819889948]
 layout_mode = 0

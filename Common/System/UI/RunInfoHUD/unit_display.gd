@@ -40,7 +40,7 @@ func _on_set_unit_display(unit : Unit) -> void:
 	$InfoElements/ExpBar.visible = unit is Hero
 	
 	# STATS
-	%DefenseContainer.visible = true
+	%DefenseContainer.visible = data.defense > 0
 	%DefenseLabel.text = str(data.defense)
 	
 	%HealthRegenContainer.visible = data.health_regen > 0
@@ -49,7 +49,7 @@ func _on_set_unit_display(unit : Unit) -> void:
 	%AttackContainer.visible = true
 	%AttackLabel.text = str(data.attack_power)
 	
-	%SkillPowerContainer.visible = true
+	%SkillPowerContainer.visible = data.ability_power > 0
 	%SkillPowerLabel.text = str(data.ability_power)
 	
 	%AttackSpeedContainer.visible = true
@@ -67,3 +67,19 @@ func _on_set_unit_display(unit : Unit) -> void:
 	%AttackRangeContainer.visible = true
 	%AttackRangeLabel.text = str(data.attack_range)
 		
+	# ------ SKILLS -----------------
+	
+	for i in range(%SkillContainer.get_children().size()):
+		if unit.temp_data.skill_data and i < unit.temp_data.skill_data.activated_skills.size():
+			var skill_panel = %SkillContainer.get_child(i)
+			skill_panel.visible = true
+			var skill = unit.temp_data.skill_data.activated_skills[i]
+			skill_panel.get_node("TextureRect").texture = unit.temp_data.skill_data.get_skill_texture(skill)
+		else:
+			%SkillContainer.get_child(i).visible = false
+		
+	
+	
+	
+	
+	

@@ -1,13 +1,18 @@
 [gd_resource type="Resource" script_class="UnitSkillData" format=3 uid="uid://dqlkyne8h36nv"]
 
 [ext_resource type="Script" uid="uid://bhsih8iry63p7" path="res://Entities/Units/ClassDef/UnitSkillData.gd" id="1_pl3xh"]
+[ext_resource type="Texture2D" uid="uid://bflxrtf3ko3md" path="res://Entities/Units/Heroes/Josephine/T_Josephine_Skill1.png" id="2_d3oox"]
 
 [resource]
 script = ExtResource("1_pl3xh")
+activated_skills = Array[int]([1])
 skill_name_dict = Dictionary[int, String]({
 1: ""
 })
 skill_type_dict = Dictionary[int, int]({
 1: 1
+})
+skill_texture_dict = Dictionary[int, Texture2D]({
+1: ExtResource("2_d3oox")
 })
 metadata/_custom_type_script = "uid://bhsih8iry63p7"

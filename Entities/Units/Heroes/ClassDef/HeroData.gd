@@ -30,6 +30,7 @@ const HERO_SCENE_PATHS = {
 func replicate() -> HeroData:
 	var new_data = self.duplicate()
 	new_data.item_datas = item_datas.duplicate()
+	new_data.skill_data = skill_data
 	
 	return new_data
 
